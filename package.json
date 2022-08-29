@@ -20,8 +20,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "test-coverage": "react-scripts test --coverage --passWithNoTests --watchAll=false",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --passWithNoTests",
     "eject": "react-scripts eject",
     "prepare": "husky install"
   },
