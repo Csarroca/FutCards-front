@@ -1,7 +1,8 @@
 import React from "react";
+import RegisterForm from "./components/RegisterForm/RegisterForm";
 
 function App() {
-  return <p>hola</p>;
+  return <RegisterForm />;
 }
 
 export default App;
