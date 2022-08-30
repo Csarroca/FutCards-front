@@ -1,5 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import "@fontsource/poppins";
 import { Provider } from "react-redux";
 import { store } from "./app/store/store";
 import App from "./App";
