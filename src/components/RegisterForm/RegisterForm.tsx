@@ -1,6 +1,9 @@
 import React, { SyntheticEvent, useState } from "react";
+import useUser from "../../hooks/useUser";
 
 const RegisterForm = (): JSX.Element => {
+  const { register } = useUser();
+
   const [registerData, setRegisterData] = useState({
     userName: "",
     password: "",
@@ -9,7 +12,7 @@ const RegisterForm = (): JSX.Element => {
   const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
 
-    //register(registerData);
+    register(registerData);
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

@@ -6,7 +6,7 @@ const apiUrl = process.env.REACT_APP_API_URL;
 const useUser = () => {
   const register = async ({ userName, password }: UserRegister) => {
     try {
-      await axios.post(`${apiUrl}/users/signUp`, {
+      await axios.post(`${apiUrl}/users/register`, {
         userName,
         password,
       });
