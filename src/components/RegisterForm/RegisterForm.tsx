@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { SyntheticEvent, useState } from "react";
 
-const Register = (): JSX.Element => {
+const RegisterForm = (): JSX.Element => {
   const [registerData, setRegisterData] = useState({
     userName: "",
     password: "",
   });
+
+  const handleSubmit = async (event: SyntheticEvent) => {
+    event.preventDefault();
+
+    //register(registerData);
+  };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRegisterData({
@@ -17,11 +23,12 @@ const Register = (): JSX.Element => {
     <>
       <h2>Create an account</h2>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="">Username</label>
+          <label htmlFor="userName">Username</label>
 
           <input
+            id="userName"
             type="text"
             name="userName"
             placeholder="Username"
@@ -30,11 +37,12 @@ const Register = (): JSX.Element => {
             value={registerData.userName}
             onChange={handleChange}
           />
-          <label htmlFor="">Password</label>
+          <label htmlFor="password">Password</label>
 
           <input
+            id="password"
             type="password"
-            name="passwd"
+            name="password"
             placeholder="password"
             required
             autoComplete="off"
@@ -48,4 +56,4 @@ const Register = (): JSX.Element => {
   );
 };
 
-export default Register;
+export default RegisterForm;
