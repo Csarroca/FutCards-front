@@ -5,15 +5,21 @@ import RegisterFormStyled from "./RegisterFormStyled";
 const RegisterForm = (): JSX.Element => {
   const { register } = useUser();
 
-  const [registerData, setRegisterData] = useState({
+  const initialState = {
     userName: "",
     password: "",
-  });
+  };
+
+  const [registerData, setRegisterData] = useState(initialState);
+
+  const formValidate =
+    registerData.userName !== "" && registerData.password !== "";
 
   const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
 
-    register(registerData);
+    await register(registerData);
+    setRegisterData(initialState);
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,11 +31,7 @@ const RegisterForm = (): JSX.Element => {
 
   return (
     <RegisterFormStyled>
-      <form
-        onSubmit={handleSubmit}
-        className="register
-      "
-      >
+      <form onSubmit={handleSubmit} className="register" noValidate>
         <label htmlFor="userName">Username</label>
 
         <input
@@ -57,7 +59,11 @@ const RegisterForm = (): JSX.Element => {
           onChange={handleChange}
         />
 
-        <button type="submit" className="register__button">
+        <button
+          type="submit"
+          className="register__button"
+          disabled={!formValidate}
+        >
           SING UP
         </button>
       </form>
