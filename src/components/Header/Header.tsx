@@ -7,7 +7,7 @@ const Header = (): JSX.Element => {
       <img
         className="header"
         src="/images/futcardsHeader.png"
-        alt="Logo de futcards"
+        alt="Logo of FutCards"
       />
     </HeaderStyled>
   );

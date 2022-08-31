@@ -7,7 +7,7 @@ const RegisterFormStyled = styled.div`
   flex-direction: column;
   min-height: 100vh;
   padding-left: 30px;
-  padding-right: 50px;
+  padding-right: 80px;
 
   .register {
     display: flex;
