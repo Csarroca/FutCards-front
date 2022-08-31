@@ -14,7 +14,7 @@ describe("Given a Header component", () => {
       expect(picture).toBeInTheDocument();
     });
 
-    test("Then it should not show an h1 with the text FutCards", () => {
+    test("Then it should render a h1 with the text FutCards", () => {
       const titleContent = "FutCards";
 
       render(<Header />);
@@ -23,5 +23,13 @@ describe("Given a Header component", () => {
 
       expect(title).toBeInTheDocument();
     });
+  });
+
+  test("Then it not show a h1 with the text FuTcards", () => {
+    render(<Header />);
+
+    const title = screen.getByRole("heading", { hidden: true });
+
+    expect(title).not.toBeVisible();
   });
 });
