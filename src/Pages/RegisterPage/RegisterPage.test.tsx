@@ -4,15 +4,26 @@ import RegisterPage from "./RegisterPage";
 
 describe("Given a RegisterPage component", () => {
   describe("When it is instanciated", () => {
-    test("Then it should show a component RegisterForms", () => {
+    test("Then it should show a heading with 'Create an account' as a text", () => {
+      const titleText = "Create an account";
       render(
         <BrowserRouter>
           <RegisterPage />
         </BrowserRouter>
       );
 
-      const nameHeading = screen.getByRole("list");
-      expect(nameHeading).toBeInTheDocument();
+      const headingName = screen.getByRole("heading", { name: titleText });
+      expect(headingName).toBeInTheDocument();
+    });
+    test("Then it should show a Register component form", () => {
+      render(
+        <BrowserRouter>
+          <RegisterPage />
+        </BrowserRouter>
+      );
+      const form = screen.getByLabelText("Username");
+
+      expect(form).toBeInTheDocument();
     });
   });
 });
