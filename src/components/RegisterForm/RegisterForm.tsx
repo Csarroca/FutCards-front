@@ -25,8 +25,6 @@ const RegisterForm = (): JSX.Element => {
 
   return (
     <RegisterFormStyled>
-      <h2 className="register-title">Create an account</h2>
-
       <form
         onSubmit={handleSubmit}
         className="register
