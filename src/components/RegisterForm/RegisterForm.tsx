@@ -1,5 +1,6 @@
 import React, { SyntheticEvent, useState } from "react";
 import useUser from "../../hooks/useUser";
+import RegisterFormStyled from "./RegisterFormStyled";
 
 const RegisterForm = (): JSX.Element => {
   const { register } = useUser();
@@ -23,39 +24,46 @@ const RegisterForm = (): JSX.Element => {
   };
 
   return (
-    <>
-      <h2>Create an account</h2>
+    <RegisterFormStyled>
+      <h2 className="register-title">Create an account</h2>
 
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="userName">Username</label>
+      <form
+        onSubmit={handleSubmit}
+        className="register
+      "
+      >
+        <label htmlFor="userName">Username</label>
 
-          <input
-            id="userName"
-            type="text"
-            name="userName"
-            placeholder="Username"
-            required
-            autoComplete="off"
-            value={registerData.userName}
-            onChange={handleChange}
-          />
-          <label htmlFor="password">Password</label>
+        <input
+          className="register__input"
+          id="userName"
+          type="text"
+          name="userName"
+          placeholder="Username"
+          required
+          autoComplete="off"
+          value={registerData.userName}
+          onChange={handleChange}
+        />
+        <label htmlFor="password">Password</label>
 
-          <input
-            id="password"
-            type="password"
-            name="password"
-            placeholder="password"
-            required
-            autoComplete="off"
-            value={registerData.password}
-            onChange={handleChange}
-          />
-        </div>
-        <button type="submit">SING UP </button>
+        <input
+          className="register__input"
+          id="password"
+          type="password"
+          name="password"
+          placeholder="password"
+          required
+          autoComplete="off"
+          value={registerData.password}
+          onChange={handleChange}
+        />
+
+        <button type="submit" className="register__button">
+          SING UP
+        </button>
       </form>
-    </>
+    </RegisterFormStyled>
   );
 };
 
