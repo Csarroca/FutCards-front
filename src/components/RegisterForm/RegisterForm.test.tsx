@@ -25,8 +25,8 @@ describe("Given a Register component", () => {
 
   describe("When a user fills every input", () => {
     test("Then every input should have what the users filled inside", async () => {
-      const filledText1 = "usertext";
-      const filledText2 = "userPasswd";
+      const userName = "usertext";
+      const userPassword = "userPasswd";
       render(<RegisterForm />);
 
       const usernameInput = screen.getByLabelText(
@@ -36,17 +36,17 @@ describe("Given a Register component", () => {
         "Password"
       ) as HTMLInputElement;
 
-      await userEvent.type(usernameInput, filledText1);
-      await userEvent.type(passwordInput, filledText2);
+      await userEvent.type(usernameInput, userName);
+      await userEvent.type(passwordInput, userPassword);
 
-      expect(usernameInput.value).toBe(filledText1);
-      expect(passwordInput.value).toBe(filledText2);
+      expect(usernameInput.value).toBe(userName);
+      expect(passwordInput.value).toBe(userPassword);
     });
   });
   describe("When all inputs are fullfiled and the user clicks on the submit button", () => {
     test("Then the register function will be called", async () => {
-      const filledText1 = "usertext";
-      const filledText2 = "userPasswd";
+      const userName = "usertext";
+      const userPassword = "userPasswd";
       render(<RegisterForm />);
 
       const usernameInput = screen.getByLabelText(
@@ -58,8 +58,8 @@ describe("Given a Register component", () => {
 
       const submitButton = screen.getByRole("button", { name: "SING UP" });
 
-      await userEvent.type(usernameInput, filledText1);
-      await userEvent.type(passwordInput, filledText2);
+      await userEvent.type(usernameInput, userName);
+      await userEvent.type(passwordInput, userPassword);
       await userEvent.click(submitButton);
 
       expect(mockUser).toHaveBeenCalled();
