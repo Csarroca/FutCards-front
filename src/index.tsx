@@ -5,7 +5,7 @@ import "@fontsource/poppins/500.css";
 import "@fontsource/poppins/600.css";
 import { Provider } from "react-redux";
 import { store } from "./app/store/store";
-import App from "./App";
+import App from "./components/App/App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";

@@ -6,7 +6,7 @@ const Header = (): JSX.Element => {
       <h1 className="header-hidden">FutCards</h1>
       <img
         className="header"
-        src="/images/futcardsHeader.png"
+        src="/images/headerImg.png"
         alt="Logo of FutCards"
       />
     </HeaderStyled>
