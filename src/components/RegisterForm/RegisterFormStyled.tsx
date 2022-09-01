@@ -3,7 +3,7 @@ import styles from "../../styles/styles";
 
 const RegisterFormStyled = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   min-height: 100vh;
   padding-left: 30px;

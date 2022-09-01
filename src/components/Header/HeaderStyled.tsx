@@ -4,8 +4,11 @@ const HeaderStyled = styled.header`
   display: flex;
   justify-content: center;
   .header {
-    max-width: 350px;
     display: flex;
+    width: 350px;
+    @media (min-width: 600px) {
+      width: 700px;
+    }
 
     &-hidden {
       display: none;

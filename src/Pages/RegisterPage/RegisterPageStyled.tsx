@@ -3,6 +3,10 @@ import styles from "../../styles/styles";
 
 const RegisterPageStyled = styled.div`
   padding-left: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px 0;
 
   .register-title {
     padding-left: 30px;
