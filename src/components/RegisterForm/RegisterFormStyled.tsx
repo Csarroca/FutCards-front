@@ -2,13 +2,6 @@ import styled from "styled-components";
 import styles from "../../styles/styles";
 
 const RegisterFormStyled = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  min-height: 100vh;
-  padding-left: 30px;
-  padding-right: 80px;
-
   .register {
     display: flex;
     flex-direction: column;
@@ -26,7 +19,6 @@ const RegisterFormStyled = styled.div`
     color: ${styles.colors.darkButtonHover};
   }
   input {
-    width: 100%;
     padding-left: 15px;
     padding-bottom: 15px;
   }

@@ -5,7 +5,7 @@ const RegisterPage = (): JSX.Element => {
   return (
     <RegisterPageStyled>
       <h2 className="register-title">Create an account</h2>
-      <RegisterForm />;
+      <RegisterForm />
     </RegisterPageStyled>
   );
 };
