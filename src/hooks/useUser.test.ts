@@ -4,6 +4,7 @@ import useUser from "./useUser";
 
 jest.mock("axios");
 const apiUrl = process.env.REACT_APP_API_URL;
+
 describe("Given a useUserApi hook", () => {
   describe("When invoke register function with a mockUser", () => {
     test("Then it should post a new user", async () => {
