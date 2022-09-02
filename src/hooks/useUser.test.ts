@@ -1,14 +1,14 @@
 import axios from "axios";
-import { UserRegister } from "../types/interfaces";
+import { AuthData } from "../types/interfaces";
 import useUser from "./useUser";
 
 jest.mock("axios");
 const apiUrl = process.env.REACT_APP_API_URL;
 
-describe("Given a useUserApi hook", () => {
+describe("Given a useUser hook", () => {
   describe("When invoke register function with a mockUser", () => {
-    test("Then it should post a new user", async () => {
-      const mockUser: UserRegister = {
+    xtest("Then it should post a new user", async () => {
+      const mockUser: AuthData = {
         userName: "Paco",
         password: "paco123",
       };
