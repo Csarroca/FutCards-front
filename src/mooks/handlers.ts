@@ -2,7 +2,7 @@ import { rest } from "msw";
 
 export const handlers = [
   rest.post(
-    `${process.env.REACT_APP_API_URL}users/register`,
+    `${process.env.REACT_APP_API_URL}/users/register`,
     async (req, res, ctx) => {
       const body = await req.json();
       if (!body.userName || !body.password) {
@@ -26,7 +26,7 @@ export const handlers = [
     }
   ),
   rest.post(
-    `${process.env.REACT_APP_API_URL}users/login`,
+    `${process.env.REACT_APP_API_URL}/users/login`,
     async (req, res, ctx) => {
       const body = await req.json();
       if (!body.userName || !body.password) {
