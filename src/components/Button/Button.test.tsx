@@ -13,6 +13,7 @@ describe("Given a Button component", () => {
           className=""
           type="button"
           actionOnclick={() => {}}
+          isDisabled={true}
         />
       );
 
@@ -29,14 +30,16 @@ describe("Given a Button component", () => {
 
       render(
         <Button
-          buttonText=""
+          buttonText="SING UP"
           className=""
           type="submit"
           actionOnclick={mockedAction}
+          isDisabled={false}
         />
       );
+
       const button = screen.getByRole("button", {
-        name: "",
+        name: "SING UP",
       });
       await userEvent.click(button);
 

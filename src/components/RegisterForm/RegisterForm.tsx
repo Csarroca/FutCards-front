@@ -1,5 +1,6 @@
 import React, { SyntheticEvent, useState } from "react";
 import useUser from "../../hooks/useUser";
+import Button from "../Button/Button";
 import RegisterFormStyled from "./RegisterFormStyled";
 
 const RegisterForm = (): JSX.Element => {
@@ -59,13 +60,13 @@ const RegisterForm = (): JSX.Element => {
           onChange={handleChange}
         />
 
-        <button
-          type="submit"
-          className="register__button"
-          disabled={!formValidate}
-        >
-          SING UP
-        </button>
+        <Button
+          isDisabled={!formValidate}
+          type={"submit"}
+          className="register__submit"
+          actionOnclick={() => {}}
+          buttonText={"SING UP"}
+        ></Button>
       </form>
     </RegisterFormStyled>
   );
