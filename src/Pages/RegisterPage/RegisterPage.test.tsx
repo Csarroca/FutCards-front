@@ -1,26 +1,21 @@
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
+import Wrapper from "../../utils/Wrapper";
 import RegisterPage from "./RegisterPage";
 
 describe("Given a RegisterPage component", () => {
   describe("When it is instanciated", () => {
-    xtest("Then it should show a heading with 'Create an account' as a text", () => {
+    test("Then it should show a heading with 'Create an account' as a text", () => {
       const titleText = "Create an account";
-      render(
-        <BrowserRouter>
-          <RegisterPage />
-        </BrowserRouter>
-      );
+
+      render(<RegisterPage />, { wrapper: Wrapper });
 
       const headingName = screen.getByRole("heading", { name: titleText });
       expect(headingName).toBeInTheDocument();
     });
-    xtest("Then it should show a Register component form", () => {
-      render(
-        <BrowserRouter>
-          <RegisterPage />
-        </BrowserRouter>
-      );
+    test("Then it should show a Register component form", () => {
+      render(<RegisterPage />, { wrapper: Wrapper });
+
       const form = screen.getByLabelText("Username");
 
       expect(form).toBeInTheDocument();
