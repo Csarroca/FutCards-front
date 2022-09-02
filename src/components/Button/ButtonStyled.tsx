@@ -9,6 +9,7 @@ const ButtonStyled = styled.button`
   height: 55px;
   border-radius: 30px;
   margin-top: 80px;
+  margin-bottom: 50px;
 `;
 
 export default ButtonStyled;

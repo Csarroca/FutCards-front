@@ -32,13 +32,17 @@ const useUser = () => {
         userName,
         password,
       });
-
+      debugger;
       const user = fetchToken(token);
 
       dispatch<PayloadAction<User>>(loginUsers(user));
 
       localStorage.setItem("token", user.token);
-    } catch (error) {}
+
+      successModal("Login successfully!");
+    } catch (error) {
+      errorModal("Password or username invalid");
+    }
   };
 
   const register = async ({ userName, password }: AuthData) => {

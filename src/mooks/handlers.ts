@@ -40,12 +40,9 @@ export const handlers = [
 
       return res(
         ctx.status(201),
-        ctx.json([
-          {
-            userName: "paco",
-            password: "paco12345",
-          },
-        ])
+        ctx.json({
+          user: { token: "fakeToken" },
+        })
       );
     }
   ),
