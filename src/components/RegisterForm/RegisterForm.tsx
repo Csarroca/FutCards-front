@@ -2,6 +2,8 @@ import React, { SyntheticEvent, useState } from "react";
 import useUser from "../../hooks/useUser";
 import Button from "../Button/Button";
 import RegisterFormStyled from "./RegisterFormStyled";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const RegisterForm = (): JSX.Element => {
   const { register } = useUser();
@@ -32,6 +34,7 @@ const RegisterForm = (): JSX.Element => {
 
   return (
     <RegisterFormStyled>
+      <ToastContainer />
       <form onSubmit={handleSubmit} className="register" noValidate>
         <label htmlFor="userName">Username</label>
 
