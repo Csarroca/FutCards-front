@@ -14,6 +14,7 @@
     "@types/react-dom": "^18.0.6",
     "axios": "^0.27.2",
     "jwt-decode": "^3.1.2",
+    "msw": "^0.46.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
