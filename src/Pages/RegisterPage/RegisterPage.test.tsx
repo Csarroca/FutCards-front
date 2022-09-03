@@ -5,7 +5,7 @@ import RegisterPage from "./RegisterPage";
 describe("Given a RegisterPage component", () => {
   describe("When it is instanciated", () => {
     test("Then it should show a heading with 'Create an account' as a text", () => {
-      const titleText = "Create an account";
+      const titleText = "CREATE AN ACCOUNT";
 
       render(<RegisterPage />, { wrapper: Wrapper });
 
@@ -19,5 +19,12 @@ describe("Given a RegisterPage component", () => {
 
       expect(form).toBeInTheDocument();
     });
+  });
+  test("Then it should show an arrow icon link to go back to login page", () => {
+    render(<RegisterPage />, { wrapper: Wrapper });
+
+    const headingName = screen.getByRole("link", { name: "" });
+
+    expect(headingName).toBeInTheDocument();
   });
 });

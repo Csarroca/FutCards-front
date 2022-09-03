@@ -10,6 +10,12 @@ const RegisterPageStyled = styled.div`
     font-weight: 600;
     font-size: 24px;
   }
+
+  .register-link {
+    width: 25px;
+    height: 25px;
+    color: black;
+  }
 `;
 
 export default RegisterPageStyled;
