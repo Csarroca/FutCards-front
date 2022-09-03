@@ -67,7 +67,7 @@ const LoginForm = (): JSX.Element => {
           type={"submit"}
           className="greenButton"
           actionOnclick={() => {}}
-          buttonText={"Login"}
+          buttonText={"LOGIN"}
         ></Button>
       </form>
     </LoginFormStyled>
