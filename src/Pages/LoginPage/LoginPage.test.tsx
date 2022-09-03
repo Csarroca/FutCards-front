@@ -1,16 +1,22 @@
 import { render, screen } from "@testing-library/react";
 import Wrapper from "../../utils/Wrapper";
-import RegisterPage from "./LoginPage";
+import LoginPage from "./LoginPage";
 
-describe("Given a RegisterPage component", () => {
+describe("Given a LoginPage component", () => {
   describe("When it is instanciated", () => {
-    test("Then it should show a heading with 'Create an account' as a text", () => {
+    test("Then it should show a heading with 'Log in' as a text", () => {
       const titleText = "Sign in";
+      const buttonText = "Create an account";
 
-      render(<RegisterPage />, { wrapper: Wrapper });
+      render(<LoginPage />, { wrapper: Wrapper });
 
       const headingName = screen.getByRole("heading", { name: titleText });
+      const createAccountButton = screen.getByRole("button", {
+        name: buttonText,
+      });
+
       expect(headingName).toBeInTheDocument();
+      expect(createAccountButton).toBeInTheDocument();
     });
   });
 });

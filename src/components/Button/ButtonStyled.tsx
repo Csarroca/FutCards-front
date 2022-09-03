@@ -10,6 +10,10 @@ const ButtonStyled = styled.button`
   border-radius: 30px;
   margin-top: 80px;
   margin-bottom: 50px;
+
+  .greenButton {
+    background-color: ${styles.colors.globalGreen};
+  }
 `;
 
 export default ButtonStyled;
