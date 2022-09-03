@@ -32,7 +32,6 @@ const useUser = () => {
         userName,
         password,
       });
-      debugger;
       const user = fetchToken(token);
 
       dispatch<PayloadAction<User>>(loginUsers(user));
