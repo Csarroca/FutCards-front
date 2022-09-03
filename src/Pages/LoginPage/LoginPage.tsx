@@ -1,13 +1,14 @@
 import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
 import LoginForm from "../../components/LoginForm/LoginForm";
+import LoginPageStyled from "./LoginPageStyled";
 
 const LoginPage = (): JSX.Element => {
   return (
-    <>
-      <h2 className="Login-title">Sign in</h2>
+    <LoginPageStyled>
+      <h2 className="title">Sign in</h2>
       <LoginForm />
-      <span className="register-text__text">
+      <span className="login-text__text">
         Don't have an account?
         <Link to={"/register"}>
           <Button
@@ -19,7 +20,7 @@ const LoginPage = (): JSX.Element => {
           />
         </Link>
       </span>
-    </>
+    </LoginPageStyled>
   );
 };
 

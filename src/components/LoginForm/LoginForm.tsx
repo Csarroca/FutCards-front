@@ -3,6 +3,7 @@ import useUser from "../../hooks/useUser";
 import Button from "../Button/Button";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import LoginFormStyled from "./LoginFormStyled";
 
 const LoginForm = (): JSX.Element => {
   const { login } = useUser();
@@ -31,9 +32,9 @@ const LoginForm = (): JSX.Element => {
   };
 
   return (
-    <>
+    <LoginFormStyled>
       <ToastContainer />
-      <form onSubmit={handleSubmit} className="register" noValidate>
+      <form onSubmit={handleSubmit} className="login" noValidate>
         <label htmlFor="userName">Username</label>
 
         <input
@@ -64,12 +65,12 @@ const LoginForm = (): JSX.Element => {
         <Button
           isDisabled={!formValidate}
           type={"submit"}
-          className="Login__submit"
+          className="greenButton"
           actionOnclick={() => {}}
           buttonText={"Login"}
         ></Button>
       </form>
-    </>
+    </LoginFormStyled>
   );
 };
 
