@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const navbar = () => {
+
+const Navbar = () => {
   return (
     <div>
       <li>Filter</li>
@@ -11,9 +12,9 @@ const navbar = () => {
         <Link to="/cards">Cards</Link>
       </li>
       <li>
-        <Link to="/My team">My team</Link>
+        <Link to="/MyTeam">My team</Link>
       </li>
     </div>
   );
 };
-export default navbar;
+export default Navbar;
