@@ -11,7 +11,7 @@ const navbar = () => {
         <Link to="/cards">Cards</Link>
       </li>
       <li>
-        <Link to="/My team">My team</Link>
+        <Link to="/MyTeam">My team</Link>
       </li>
     </div>
   );
