@@ -7,7 +7,7 @@ const HeaderStyled = styled.header`
   justify-content: center;
 
   .header {
-    width: 80%;
+    width: 85%;
 
     @media (min-width: 1000px) {
       width: 800px;
