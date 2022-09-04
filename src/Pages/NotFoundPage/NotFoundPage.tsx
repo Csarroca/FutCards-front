@@ -7,12 +7,13 @@ const NotFoundPage = (): JSX.Element => {
     <NotFoundPageStyled>
       <h1>404</h1>
       <img
-        src="../../../public/images/404.png"
+        src="/images/404.png"
         alt="A referee with a red card"
+        className="page-image"
       />
       <h2>Page not found</h2>
       <Link to={"/login"}>
-        <FaHome className="home-link" />
+        <FaHome className="link" />
       </Link>
     </NotFoundPageStyled>
   );
