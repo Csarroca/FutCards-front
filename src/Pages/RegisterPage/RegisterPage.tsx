@@ -9,7 +9,7 @@ const RegisterPage = (): JSX.Element => {
       <Link to={"/login"}>
         <FaArrowLeft className="register-link" />
       </Link>
-      <h2 className="register-title">CREATE AN ACCOUNT</h2>
+      <h2 className="register-title">REGISTER</h2>
       <RegisterForm />
     </RegisterPageStyled>
   );

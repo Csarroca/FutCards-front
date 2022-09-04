@@ -12,11 +12,11 @@ const Button = ({
   actionOnclick,
   type,
   isDisabled,
-  className: classNameTypeButton,
+  className,
 }: ButtonProps): JSX.Element => {
   return (
     <ButtonStyled
-      className={classNameTypeButton}
+      className={className}
       type={type}
       disabled={isDisabled}
       onClick={() => actionOnclick()}

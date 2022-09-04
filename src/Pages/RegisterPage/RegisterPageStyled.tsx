@@ -4,6 +4,7 @@ import styles from "../../styles/styles";
 const RegisterPageStyled = styled.div`
   max-width: 375px;
   margin: 0 auto;
+  width: 85%;
 
   .register-title {
     color: ${styles.colors.globalDarkGreen};
@@ -14,7 +15,7 @@ const RegisterPageStyled = styled.div`
   .register-link {
     width: 25px;
     height: 25px;
-    color: black;
+    color: ${styles.colors.globalDarkGreen};
   }
 `;
 
