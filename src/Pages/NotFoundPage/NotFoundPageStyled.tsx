@@ -6,14 +6,13 @@ const NotFoundPageStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${styles.colors.globalDarkGreen};
+  background-color: #2b663d;
   color: white;
 
   .page-image {
     display: flex;
     align-self: center;
-
-    width: auto;
+    max-width: 80%;
     height: auto;
   }
 
