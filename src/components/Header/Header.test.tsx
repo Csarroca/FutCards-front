@@ -3,7 +3,7 @@ import { screen, render } from "@testing-library/react";
 
 describe("Given a Header component", () => {
   describe("When it is rendered", () => {
-    test("Then it should show an imagen with the alternative text 'Nations logo' in the header", () => {
+    test("Then it should show an imagen with the alternative text 'Logo of futCards' in the header", () => {
       const alternativeText = "Logo of FutCards";
 
       render(<Header />);

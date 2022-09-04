@@ -4,7 +4,7 @@ import LoginPage from "./LoginPage";
 
 describe("Given a LoginPage component", () => {
   describe("When it is instanciated", () => {
-    test("Then it should show a heading with 'Log in' as a text", () => {
+    test("Then it should show a heading with 'Log in' as a text and a button with 'Create an account' as a text inside", () => {
       const titleText = "Sign in";
       const buttonText = "Create an account";
 
