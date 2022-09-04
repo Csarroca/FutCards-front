@@ -2,17 +2,15 @@ import styled from "styled-components";
 
 const HeaderStyled = styled.header`
   padding: 25px 0;
-
-  @media (min-width: 1000px) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .header {
-    width: 250px;
+    width: 85%;
+
     @media (min-width: 1000px) {
-      width: 700px;
+      width: 800px;
     }
 
     &-hidden {
