@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import styles from "../../styles/styles";
 
 const NotFoundPageStyled = styled.div`
   margin: 0;
