@@ -5,6 +5,9 @@ import RegisterPage from "../../Pages/RegisterPage/RegisterPage";
 import AppStyled from "./AppStyled";
 import LoginPage from "../../Pages/LoginPage/LoginPage";
 import NotFoundPage from "../../Pages/NotFoundPage/NotFoundPage";
+import CardsPage from "../../Pages/CardsPage/CardsPage";
+import MyTeamPage from "../../Pages/MyTeamPage/MyTeamPage";
+import CreateCardPage from "../../Pages/CreateCardPage/CreateCardPage";
 
 function App() {
   return (
@@ -15,6 +18,9 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="*" element={<NotFoundPage />} />
+        <Route path="/cards" element={<CardsPage />} />
+        <Route path="/MyTeam" element={<MyTeamPage />} />
+        <Route path="/create" element={<CreateCardPage />} />
       </Routes>
     </AppStyled>
   );
