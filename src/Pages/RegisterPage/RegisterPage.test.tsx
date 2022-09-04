@@ -5,7 +5,7 @@ import RegisterPage from "./RegisterPage";
 describe("Given a RegisterPage component", () => {
   describe("When it is instanciated", () => {
     test("Then it should show a heading with 'Create an account' as a text", () => {
-      const titleText = "CREATE AN ACCOUNT";
+      const titleText = "REGISTER";
 
       render(<RegisterPage />, { wrapper: Wrapper });
 
