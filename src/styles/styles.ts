@@ -8,6 +8,9 @@ const styles = {
     globalDarkGreen: "#006838",
     globalRed: "#FF0000",
     globalRedHover: "#900F11",
+    cardColor1: "#e1c072",
+    cardColor2: "#fdeaa7",
+    cardColor3: "#725b16",
   },
 };
 

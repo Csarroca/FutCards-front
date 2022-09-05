@@ -1,5 +1,15 @@
+import FutCard from "../../components/FutCard/FutCard";
+import Navbar from "../../components/NavBar/Navbar";
+
 const CardsPage = (): JSX.Element => {
-  return <h1> CardsPage</h1>;
+  <></>;
+  return (
+    <>
+      <Navbar />
+
+      <FutCard />
+    </>
+  );
 };
 
 export default CardsPage;
