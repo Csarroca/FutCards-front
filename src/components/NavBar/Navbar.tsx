@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import NavbarStyled from "./NavbarStyled";
 
 const Navbar = () => {
@@ -9,19 +9,19 @@ const Navbar = () => {
         <ul className="navbar-list">
           <li className="navbar-list__link">Filter</li>
           <li>
-            <Link to="/create" className="navbar-list__link">
+            <NavLink to="/create" className="navbar-list__link">
               Create card
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/cards" className="navbar-list__link">
+            <NavLink to="/cards" className="navbar-list__link">
               Cards
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/MyTeam" className="navbar-list__link">
+            <NavLink to="/MyTeam" className="navbar-list__link">
               My team
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>

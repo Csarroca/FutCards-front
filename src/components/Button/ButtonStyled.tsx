@@ -9,7 +9,7 @@ const ButtonStyled = styled.button`
   height: 55px;
   border-radius: 30px;
 
-  .greenButton {
+  &.greenButton {
     background-color: ${styles.colors.globalGreen};
   }
 `;
