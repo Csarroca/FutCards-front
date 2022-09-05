@@ -6,7 +6,7 @@ const FutCardStyled = styled.div`
   $country-image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/214624/portugal.png";
   $club-image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/214624/Juventus_Logo.png";
 
-  #card {
+  .card {
     font-family: "Roboto Condensed", sans-serif;
     position: relative;
     color: ${styles.colors.cardColor3};
@@ -18,7 +18,7 @@ const FutCardStyled = styled.div`
     display: block;
     opacity: 1;
 
-    #card-inner {
+    .card-inner {
       position: absolute;
       top: 0;
       left: 0;
@@ -27,7 +27,7 @@ const FutCardStyled = styled.div`
       height: 100%;
       width: 100%;
 
-      #card-top {
+      .card-top {
         position: absolute;
         width: 100%;
         height: 54%;
@@ -128,7 +128,7 @@ const FutCardStyled = styled.div`
         }
       }
 
-      #card-bottom {
+      .card-bottom {
         position: absolute;
         overflow: hidden;
         bottom: 0;

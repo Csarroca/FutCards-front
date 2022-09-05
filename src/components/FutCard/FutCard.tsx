@@ -3,7 +3,7 @@ import FutCardStyled from "./FutCardsStyled";
 const FutCard = (): JSX.Element => {
   return (
     <FutCardStyled>
-      <div id="card">
+      <div className="card">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 267.3 427.3">
           <clipPath id="svgPath">
             <path
@@ -12,8 +12,8 @@ const FutCard = (): JSX.Element => {
             />
           </clipPath>
         </svg>
-        <div id="card-inner">
-          <div id="card-top">
+        <div className="card-inner">
+          <div className="card-top">
             <div className="info">
               <div className="value">94</div>
               <div className="position">st</div>
@@ -28,7 +28,7 @@ const FutCard = (): JSX.Element => {
             <div className="image"></div>
             <div className="backfont"></div>
           </div>
-          <div id="card-bottom">
+          <div className="card-bottom">
             <div className="name">ronaldo</div>
             <div className="stats">
               <div>
