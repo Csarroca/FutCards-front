@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 const HeaderStyled = styled.header`
-  padding: 25px 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 20vh;
 
   .header {
     width: 85%;
