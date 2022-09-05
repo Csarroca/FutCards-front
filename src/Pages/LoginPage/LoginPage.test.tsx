@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import LoginForm from "../../components/LoginForm/LoginForm";
 import Wrapper from "../../utils/Wrapper";
 import LoginPage from "./LoginPage";
 
@@ -18,5 +19,16 @@ describe("Given a LoginPage component", () => {
       expect(headingName).toBeInTheDocument();
       expect(createAccountButton).toBeInTheDocument();
     });
+  });
+  test("Then it should show a form component with a userName and password as a labels and a button with login as a text", () => {
+    render(<LoginForm />, { wrapper: Wrapper });
+
+    const registerForm = [
+      screen.getByText("Username"),
+      screen.getByText("Password"),
+      screen.getByRole("button", { name: "LOGIN" }),
+    ];
+
+    registerForm.forEach((element) => expect(element).toBeInTheDocument());
   });
 });
