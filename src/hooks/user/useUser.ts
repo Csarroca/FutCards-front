@@ -1,10 +1,10 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
-import { useAppDispatch } from "../app/store/hooks";
-import { User } from "../features/users/models/User";
-import { loginUsers } from "../features/users/UserSlice";
-import { AuthData } from "../types/interfaces";
-import fetchToken from "../utils/auth";
+import { useAppDispatch } from "../../app/store/hooks";
+import { User } from "../../features/users/models/User";
+import { loginUsers } from "../../features/users/UserSlice";
+import { AuthData } from "../../types/interfaces";
+import fetchToken from "../../utils/auth";
 import { toast } from "react-toastify";
 
 export const successModal = (message: string) =>
