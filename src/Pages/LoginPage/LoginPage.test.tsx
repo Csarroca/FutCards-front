@@ -1,5 +1,6 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import LoginForm from "../../components/LoginForm/LoginForm";
+import { wrappedRender } from "../../utils/WrappedRender";
 import Wrapper from "../../utils/Wrapper";
 import LoginPage from "./LoginPage";
 
@@ -9,7 +10,7 @@ describe("Given a LoginPage component", () => {
       const titleText = "Sign in";
       const buttonText = "REGISTER";
 
-      render(<LoginPage />, { wrapper: Wrapper });
+      wrappedRender(<LoginPage />, { wrapper: Wrapper });
 
       const headingName = screen.getByRole("heading", { name: titleText });
       const createAccountButton = screen.getByRole("button", {
@@ -21,7 +22,7 @@ describe("Given a LoginPage component", () => {
     });
   });
   test("Then it should show a form component with a userName and password as a labels and a button with login as a text", () => {
-    render(<LoginForm />, { wrapper: Wrapper });
+    wrappedRender(<LoginForm />, { wrapper: Wrapper });
 
     const registerForm = [
       screen.getByText("Username"),
