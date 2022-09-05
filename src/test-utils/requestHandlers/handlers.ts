@@ -1,4 +1,6 @@
 import { rest } from "msw";
+import { Card } from "../../features/cards/models/card";
+import mockedCard from "../mocks/mockCard";
 
 export const handlers = [
   rest.post(
@@ -46,4 +48,8 @@ export const handlers = [
       );
     }
   ),
+
+  rest.get(`${process.env.REACT_APP_API_URL}/cards`, async (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json<Card[]>([mockedCard]));
+  }),
 ];

@@ -1,7 +1,7 @@
 const mockUseDispatch = jest.fn();
 
-jest.mock("../../app/hooks", () => ({
-  ...jest.requireActual("../../app/hooks"),
+jest.mock("../../app/store/hooks", () => ({
+  ...jest.requireActual("../../app/store/hooks"),
   useAppDispatch: () => mockUseDispatch,
 }));
 

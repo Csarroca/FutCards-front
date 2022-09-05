@@ -18,8 +18,5 @@ export interface ProtoCard {
 
 export interface Card extends ProtoCard {
   id: string;
-  owner: {
-    _id: string;
-    userName: string;
-  };
+  owner: string;
 }
