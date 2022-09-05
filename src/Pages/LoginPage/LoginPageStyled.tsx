@@ -11,9 +11,15 @@ const LoginPageStyled = styled.div`
     font-weight: 600;
     font-size: 24px;
   }
+
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .register-button {
     margin-top: 30px;
-    margin-left: 10px;
   }
   @media (min-width: 1000px) {
     max-width: 500px;

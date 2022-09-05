@@ -2,17 +2,13 @@ import styled from "styled-components";
 import styles from "../../styles/styles";
 
 const FutCardStyled = styled.div`
-  $player-image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/214624/Ronaldo.png";
-  $country-image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/214624/portugal.png";
-  $club-image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/214624/Juventus_Logo.png";
-
   .card {
     font-family: "Roboto Condensed", sans-serif;
     position: relative;
     color: ${styles.colors.cardColor3};
     width: 270px;
     height: 430px;
-    background: #ddd;
+    background: ${styles.colors.cardColor3};
     margin: auto;
     clip-path: url("#svgPath");
     display: block;
@@ -57,7 +53,7 @@ const FutCardStyled = styled.div`
           z-index: 2;
           height: 75%;
           width: 70%;
-          background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/214624/Ronaldo.png");
+          object-fit: scale-down;
           background-position: bottom center;
           background-repeat: no-repeat;
           background-size: contain;
@@ -93,7 +89,7 @@ const FutCardStyled = styled.div`
               font-weight: 700;
               margin-bottom: 5px;
               border-bottom: 2px solid
-                transparentize(${styles.colors.cardColor2}, 0.1);
+                transparentize(${styles.colors.cardColor1}, 0.1);
             }
 
             &.country,
@@ -104,13 +100,12 @@ const FutCardStyled = styled.div`
               height: 25px;
               margin: 5px auto;
 
-              div {
+              img {
                 position: relative;
                 height: 100%;
                 width: 100%;
                 background-position: center;
                 background-size: cover;
-                background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/214624/portugal.png");
               }
 
               &.club {
@@ -120,7 +115,6 @@ const FutCardStyled = styled.div`
                   background-size: contain;
                   background-position: top center;
                   background-repeat: no-repeat;
-                  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/214624/Juventus_Logo.png");
                 }
               }
             }

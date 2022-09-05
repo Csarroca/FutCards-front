@@ -1,6 +1,11 @@
+import { Card } from "../../features/cards/models/card";
 import FutCardStyled from "./FutCardsStyled";
 
-const FutCard = (): JSX.Element => {
+interface FutCardProps {
+  card: Card;
+}
+
+const FutCard = ({ card }: FutCardProps): JSX.Element => {
   return (
     <FutCardStyled>
       <div className="card">
@@ -15,50 +20,50 @@ const FutCard = (): JSX.Element => {
         <div className="card-inner">
           <div className="card-top">
             <div className="info">
-              <div className="value">94</div>
-              <div className="position">st</div>
+              <div className="value">{card.overall}</div>
+              <div className="position">{card.position}</div>
               <div className="country">
-                <div></div>
+                <img src={card.nacionallity} alt="country flag" />
               </div>
               <div className="club">
-                <div></div>
+                <img src={card.team} alt="club of football" />
               </div>
             </div>
 
-            <div className="image"></div>
+            <img className="image" src={card.image} alt="Player avatar"></img>
             <div className="backfont"></div>
           </div>
           <div className="card-bottom">
-            <div className="name">ronaldo</div>
+            <div className="name">{card.name}</div>
             <div className="stats">
               <div>
                 <ul>
                   <li>
-                    <span>89</span>
+                    <span>{card.pace}</span>
                     <span>pac</span>
                   </li>
                   <li>
-                    <span>94</span>
+                    <span>{card.shooting}</span>
                     <span>sho</span>
                   </li>
                   <li>
-                    <span>81</span>
-                    <span>pas</span>
+                    <span>{card.passing}</span>
+                    <span>pass</span>
                   </li>
                 </ul>
               </div>
               <div>
                 <ul>
                   <li>
-                    <span>90</span>
+                    <span>{card.dribbling}</span>
                     <span>dri</span>
                   </li>
                   <li>
-                    <span>33</span>
+                    <span>{card.defense}</span>
                     <span>def</span>
                   </li>
                   <li>
-                    <span>83</span>
+                    <span>{card.physicall}</span>
                     <span>phy</span>
                   </li>
                 </ul>
