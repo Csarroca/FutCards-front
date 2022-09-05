@@ -12,17 +12,16 @@ const useApi = () => {
   const dispatch = useAppDispatch();
 
   const getAllCards = useCallback(async () => {
-    const { data }: AxiosResponse<Card[]> = await axios.get(`${url}/cards`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.token}`,
-      },
-    });
-
-    console.log(data);
-
-    dispatch<PayloadAction<Card[]>>(loadAllCardsActionCreator(data));
+    try {
+      const { data }: AxiosResponse<Card[]> = await axios.get(`${url}/cards`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.token}`,
+        },
+      });
+      dispatch<PayloadAction<Card[]>>(loadAllCardsActionCreator(data));
+    } catch (error) {}
   }, [dispatch]);
 
   return { cards, getAllCards };
