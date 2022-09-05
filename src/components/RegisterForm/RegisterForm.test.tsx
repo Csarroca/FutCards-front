@@ -4,7 +4,7 @@ import RegisterForm from "./RegisterForm";
 
 const mockUser = jest.fn();
 
-jest.mock("../../hooks/useUser", () => () => ({
+jest.mock("../../hooks/user/useUser", () => () => ({
   register: mockUser,
 }));
 

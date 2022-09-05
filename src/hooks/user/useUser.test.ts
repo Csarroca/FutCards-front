@@ -1,12 +1,12 @@
 import { renderHook } from "@testing-library/react";
 import { toast } from "react-toastify";
-import { AuthData } from "../types/interfaces";
-import Wrapper from "../utils/Wrapper";
+import { AuthData } from "../../types/interfaces";
+import Wrapper from "../../utils/Wrapper";
 import useUser from "./useUser";
 
 jest.mock("react-toastify");
 
-jest.mock("../utils/auth", () => () => ({
+jest.mock("../../utils/auth", () => () => ({
   token: "234ffgg44",
   id: "24sdf",
   userName: "paco",

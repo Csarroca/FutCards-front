@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import Wrapper from "./Wrapper";
+import Wrapper from "../../utils/Wrapper";
 
 const wrappedRender = (view: JSX.Element, ...options: any) =>
   render(view, { wrapper: Wrapper, ...options });

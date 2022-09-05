@@ -1,6 +1,6 @@
 import { screen } from "@testing-library/react";
 import LoginForm from "../../components/LoginForm/LoginForm";
-import { wrappedRender } from "../../utils/WrappedRender";
+import { wrappedRender } from "../../test-utils/render/WrappedRender";
 import Wrapper from "../../utils/Wrapper";
 import LoginPage from "./LoginPage";
 
