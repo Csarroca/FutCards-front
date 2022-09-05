@@ -1,22 +1,29 @@
 import { PayloadAction } from "@reduxjs/toolkit";
+import axios, { AxiosResponse } from "axios";
 import { useCallback } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/store/hooks";
 import { loadAllCardsActionCreator } from "../../features/cards/cardsSlice";
 import { Card } from "../../features/cards/models/card";
 
-const useApi = () => {
-  const url = process.env.REACT_APP_API_URL as string;
+const url = process.env.REACT_APP_API_URL as string;
 
+const useApi = () => {
   const cards = useAppSelector(({ cards }) => cards);
   const dispatch = useAppDispatch();
 
   const getAllCards = useCallback(async () => {
-    const response = await fetch(url);
-    const { cards }: { cards: Card[] } = await response.json();
-    console.log(response, "response");
-    console.log(cards, "cards");
-    dispatch<PayloadAction<Card[]>>(loadAllCardsActionCreator(cards));
-  }, [dispatch, url]);
+    const { data }: AxiosResponse<Card[]> = await axios.get(`${url}/cards`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.token}`,
+      },
+    });
+
+    console.log(data);
+
+    dispatch<PayloadAction<Card[]>>(loadAllCardsActionCreator(data));
+  }, [dispatch]);
 
   return { cards, getAllCards };
 };
