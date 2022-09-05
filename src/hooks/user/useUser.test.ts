@@ -6,7 +6,7 @@ import useUser from "./useUser";
 
 jest.mock("react-toastify");
 
-jest.mock("../utils/auth", () => () => ({
+jest.mock("../../utils/auth", () => () => ({
   token: "234ffgg44",
   id: "24sdf",
   userName: "paco",

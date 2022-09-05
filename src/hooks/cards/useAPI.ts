@@ -13,7 +13,8 @@ const useApi = () => {
   const getAllCards = useCallback(async () => {
     const response = await fetch(url);
     const { cards }: { cards: Card[] } = await response.json();
-
+    console.log(response, "response");
+    console.log(cards, "cards");
     dispatch<PayloadAction<Card[]>>(loadAllCardsActionCreator(cards));
   }, [dispatch, url]);
 
