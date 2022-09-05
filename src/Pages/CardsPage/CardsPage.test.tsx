@@ -4,14 +4,12 @@ import CardsPage from "./CardsPage";
 
 describe("Given a CardsPage component", () => {
   describe("When it is instanciated", () => {
-    test("Then it should show a heading with 'CardsPage' as a text", () => {
-      const pageTitle = "CardsPage";
-
+    test("Then it should show a navbar and a FutCard component", () => {
       render(<CardsPage />, { wrapper: Wrapper });
 
-      const headingName = screen.getByRole("heading", { name: pageTitle });
+      const navbar = screen.getByRole("navigation", { name: "" });
 
-      expect(headingName).toBeInTheDocument();
+      expect(navbar).toBeInTheDocument();
     });
   });
 });
