@@ -8,6 +8,7 @@ const ButtonStyled = styled.button`
   color: white;
   height: 55px;
   border-radius: 30px;
+  cursor: pointer;
 
   &.greenButton {
     background-color: ${styles.colors.globalGreen};
