@@ -20,8 +20,8 @@ const LoginForm = (): JSX.Element => {
   const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
 
-    await login(loginData);
     setLoginData(initialState);
+    await login(loginData);
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

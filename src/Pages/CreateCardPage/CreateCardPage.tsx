@@ -5,7 +5,7 @@ const CreateCardPage = (): JSX.Element => {
   return (
     <>
       {" "}
-      <h1> CreateCardPage</h1>;
+      <h1> CreateCardPage</h1>
       <NavbarStyled>
         <Navbar />
       </NavbarStyled>

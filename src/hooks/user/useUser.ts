@@ -6,6 +6,7 @@ import { loginUsers } from "../../features/users/UserSlice";
 import { AuthData } from "../../types/interfaces";
 import fetchToken from "../../utils/auth";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 export const successModal = (message: string) =>
   toast.success(message, {
@@ -21,6 +22,8 @@ const useUser = () => {
   const apiUrl = process.env.REACT_APP_API_URL;
 
   const dispatch = useAppDispatch();
+
+  const navigate = useNavigate();
 
   const login = async ({ userName, password }: AuthData) => {
     try {
@@ -39,6 +42,7 @@ const useUser = () => {
       localStorage.setItem("token", user.token);
 
       successModal("Login successfully!");
+      navigate("/cards");
     } catch (error) {
       errorModal("Password or username invalid");
     }
