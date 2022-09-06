@@ -5,12 +5,11 @@ const NavbarStyled = styled.div`
   background-color: ${styles.colors.globalGreen};
 
   color: white;
-  font-size: 26px;
+  font-size: 15px;
 
   .navbar {
     display: flex;
     justify-content: center;
-    gap: 25px;
 
     &-list {
       display: flex;

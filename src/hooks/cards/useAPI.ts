@@ -10,6 +10,7 @@ const url = process.env.REACT_APP_API_URL as string;
 const useApi = () => {
   const cards = useAppSelector(({ cards }) => cards);
   const dispatch = useAppDispatch();
+  const token = useAppSelector((state) => state.users.token);
 
   const getAllCards = useCallback(async () => {
     try {
@@ -17,12 +18,12 @@ const useApi = () => {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.token}`,
+          Authorization: `Bearer ${token}`,
         },
       });
       dispatch<PayloadAction<Card[]>>(loadAllCardsActionCreator(data));
     } catch (error) {}
-  }, [dispatch]);
+  }, [dispatch, token]);
 
   return { cards, getAllCards };
 };
