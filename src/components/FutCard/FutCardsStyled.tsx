@@ -153,12 +153,14 @@ const FutCardStyled = styled.div`
           margin: 6px 0;
         }
         .stats {
-          position: relative;
+          position: absolute;
           margin: 0 40px;
           padding-top: 10px;
           border-top: 4px solid ${styles.colors.cardColor2};
           display: flex;
-
+          &-list {
+            gap: 0;
+          }
           &:after {
             content: "";
             position: absolute;

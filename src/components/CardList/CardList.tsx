@@ -12,10 +12,15 @@ const CardList = (): JSX.Element => {
   return (
     <>
       <CardListStyled>
-        <h2>CARDS LIST</h2>
-        <ul className="cards">
+        <h2
+          className="cards-list__title
+        "
+        >
+          CARDS LIST
+        </h2>
+        <ul className="cards-list">
           {cards.map((card: Card) => (
-            <li key={card.id}>
+            <li key={card.id} className="cards-list__card">
               <FutCard card={card} />
             </li>
           ))}
