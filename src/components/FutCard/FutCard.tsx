@@ -30,14 +30,14 @@ const FutCard = ({ card }: FutCardProps): JSX.Element => {
               </div>
             </div>
 
-            <img className="image" src={card.image} alt="Player avatar"></img>
+            <img className="image" src={card.image} alt="player avatar"></img>
             <div className="backfont"></div>
           </div>
           <div className="card-bottom">
             <div className="name">{card.name}</div>
             <div className="stats">
               <div>
-                <ul>
+                <ul className="stats-list">
                   <li>
                     <span>{card.pace}</span>
                     <span>pac</span>
@@ -53,7 +53,7 @@ const FutCard = ({ card }: FutCardProps): JSX.Element => {
                 </ul>
               </div>
               <div>
-                <ul>
+                <ul className="stats-list">
                   <li>
                     <span>{card.dribbling}</span>
                     <span>dri</span>

@@ -11,5 +11,6 @@ describe("Given a CardsPage component", () => {
 
       expect(navbar).toBeInTheDocument();
     });
+    test("Then it should show a FutCard list", () => {});
   });
 });

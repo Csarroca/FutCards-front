@@ -5,7 +5,7 @@ const NavbarStyled = styled.div`
   background-color: ${styles.colors.globalGreen};
 
   color: white;
-  font-size: 6px;
+  font-size: 26px;
 
   .navbar {
     display: flex;
