@@ -8,6 +8,7 @@ import NotFoundPage from "../../Pages/NotFoundPage/NotFoundPage";
 import CardsPage from "../../Pages/CardsPage/CardsPage";
 import MyTeamPage from "../../Pages/MyTeamPage/MyTeamPage";
 import CreateCardPage from "../../Pages/CreateCardPage/CreateCardPage";
+import RouteProtector from "../RouteProtector/RouteProtector";
 
 function App() {
   return (
@@ -17,7 +18,14 @@ function App() {
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/cards" element={<CardsPage />} />
+        <Route
+          path="/cards"
+          element={
+            <RouteProtector>
+              <CardsPage />
+            </RouteProtector>
+          }
+        />
         <Route path="/MyTeam" element={<MyTeamPage />} />
         <Route path="/create" element={<CreateCardPage />} />
         <Route path="*" element={<NotFoundPage />} />
