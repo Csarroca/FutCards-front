@@ -10,6 +10,8 @@ export const cardsSlice = createSlice({
     loadAllCards: (previousCards, action: PayloadAction<Card[]>) => [
       ...action.payload,
     ],
+    deleteCard: (previousCards, action: PayloadAction<string>) =>
+      previousCards.filter((card) => card.id !== action.payload),
   },
 });
 
