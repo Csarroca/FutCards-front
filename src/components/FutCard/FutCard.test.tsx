@@ -1,4 +1,4 @@
-import { getByAltText, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import mockedCard from "../../test-utils/mocks/mockCard";
 import Wrapper from "../../utils/Wrapper";
 import FutCard from "./FutCard";
