@@ -18,9 +18,14 @@ const LoginPageStyled = styled.div`
     align-items: center;
   }
 
-  .register-button {
-    margin-top: 30px;
+  .login-text {
+    padding-top: 20px;
   }
+
+  .login-link {
+    padding-left: 10px;
+  }
+
   @media (min-width: 1000px) {
     max-width: 500px;
   }

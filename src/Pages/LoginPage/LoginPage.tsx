@@ -9,15 +9,12 @@ const LoginPage = (): JSX.Element => {
       <div className="login-container">
         <h2 className="title">Sign in</h2>
         <LoginForm />
-        <Link to={"/register"}>
-          <Button
-            actionOnclick={() => {}}
-            buttonText={"REGISTER"}
-            className="register-button"
-            isDisabled={false}
-            type="button"
-          />
-        </Link>
+        <span className="login-text">
+          Don't have and account? Register
+          <Link to={"/register"} className="login-link">
+            here
+          </Link>
+        </span>
       </div>
     </LoginPageStyled>
   );
