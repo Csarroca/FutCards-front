@@ -1,12 +1,22 @@
 import { Card } from "../../features/cards/models/card";
 import FutCardStyled from "./FutCardsStyled";
 import { FaTimesCircle } from "react-icons/fa";
+import { useAppSelector } from "../../app/store/hooks";
+import useApi from "../../hooks/cards/useAPI";
 
 interface FutCardProps {
   card: Card;
 }
 
 const FutCard = ({ card }: FutCardProps): JSX.Element => {
+  const { id } = useAppSelector((state) => state.users);
+
+  const { deleteCard } = useApi();
+
+  const handleDelete = (event: React.MouseEvent<SVGElement, MouseEvent>) => {
+    deleteCard(card.id);
+  };
+
   return (
     <FutCardStyled>
       <div className="card">
@@ -30,7 +40,9 @@ const FutCard = ({ card }: FutCardProps): JSX.Element => {
                 <img src={card.team} alt="club of football" />
               </div>
             </div>
-            <FaTimesCircle className="card-delete" />
+            {card.owner === id && (
+              <FaTimesCircle className="card-delete" onClick={handleDelete} />
+            )}
 
             <img className="image" src={card.image} alt="player avatar"></img>
             <div className="backfont"></div>

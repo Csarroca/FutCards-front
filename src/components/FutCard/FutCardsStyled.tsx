@@ -15,7 +15,7 @@ const FutCardStyled = styled.div`
     opacity: 1;
 
     .card-delete {
-      color: black;
+      color: ${styles.colors.cardColor3};
       position: absolute;
       right: 20px;
       top: 0;
@@ -24,6 +24,7 @@ const FutCardStyled = styled.div`
       width: 25%;
       box-sizing: border-box;
       padding: 0 20px;
+      cursor: pointer;
     }
 
     .card-inner {
