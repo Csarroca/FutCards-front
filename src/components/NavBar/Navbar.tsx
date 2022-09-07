@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import NavbarStyled from "./NavbarStyled";
-import { FaSignOutAlt } from "react-icons/fa";
 
 const Navbar = () => {
   return (
@@ -28,7 +27,6 @@ const Navbar = () => {
           <li>
             <NavLink to="/login" className="navbar-list__link">
               Logout
-              <FaSignOutAlt className="header-logout" />
             </NavLink>
           </li>
         </ul>

@@ -12,10 +12,11 @@ export const usersSlice = createSlice({
   initialState: usersInitialState,
   reducers: {
     loginUsers: (previousUsers, action: PayloadAction<User>) => action.payload,
+    logoutUsers: (previousUsers, action: PayloadAction) => usersInitialState,
   },
 });
 
-export const { loginUsers } = usersSlice.actions;
+export const { loginUsers, logoutUsers } = usersSlice.actions;
 
 export const usersReducer = usersSlice.reducer;
 
