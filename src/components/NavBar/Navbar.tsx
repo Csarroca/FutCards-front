@@ -1,8 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import useUser from "../../hooks/user/useUser";
 import NavbarStyled from "./NavbarStyled";
 
 const Navbar = () => {
+  const { logout } = useUser();
+
+  const handleLogout = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    logout();
+  };
   return (
     <NavbarStyled>
       <nav className="navbar">
@@ -13,6 +21,7 @@ const Navbar = () => {
               Create card
             </NavLink>
           </li>
+
           <li>
             <NavLink to="/cards" className="navbar-list__link">
               Cards
@@ -21,6 +30,15 @@ const Navbar = () => {
           <li>
             <NavLink to="/MyTeam" className="navbar-list__link">
               My team
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/login"
+              className="navbar-list__link"
+              onClick={handleLogout}
+            >
+              Logout
             </NavLink>
           </li>
         </ul>

@@ -2,7 +2,7 @@ import { PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import { useAppDispatch } from "../../app/store/hooks";
 import { User } from "../../features/users/models/User";
-import { loginUsers } from "../../features/users/UserSlice";
+import { loginUsers, logoutUsers } from "../../features/users/UserSlice";
 import { AuthData } from "../../types/interfaces";
 import fetchToken from "../../utils/auth";
 import { toast } from "react-toastify";
@@ -48,6 +48,11 @@ const useUser = () => {
     }
   };
 
+  const logout = () => {
+    dispatch<PayloadAction>(logoutUsers());
+    localStorage.removeItem("token");
+  };
+
   const register = async ({ userName, password }: AuthData) => {
     try {
       await axios.post(`${apiUrl}/users/register`, {
@@ -60,7 +65,7 @@ const useUser = () => {
     }
   };
 
-  return { register, login };
+  return { register, login, logout };
 };
 
 export default useUser;

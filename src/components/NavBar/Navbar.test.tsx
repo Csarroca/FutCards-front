@@ -1,5 +1,7 @@
 import { render, screen } from "@testing-library/react";
+import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
+import { store } from "../../app/store/store";
 import Navbar from "./Navbar";
 
 describe("Given a Navbar component", () => {
@@ -8,9 +10,11 @@ describe("Given a Navbar component", () => {
       const linkText1 = "Create card";
 
       render(
-        <BrowserRouter>
-          <Navbar />
-        </BrowserRouter>
+        <Provider store={store}>
+          <BrowserRouter>
+            <Navbar />
+          </BrowserRouter>
+        </Provider>
       );
       const navItem = screen.getByRole("link", { name: linkText1 });
 
@@ -21,9 +25,11 @@ describe("Given a Navbar component", () => {
       const text = "Cards";
 
       render(
-        <BrowserRouter>
-          <Navbar />
-        </BrowserRouter>
+        <Provider store={store}>
+          <BrowserRouter>
+            <Navbar />
+          </BrowserRouter>
+        </Provider>
       );
       const navItem = screen.getByRole("link", {
         name: text,
@@ -35,9 +41,11 @@ describe("Given a Navbar component", () => {
       const text = "My team";
 
       render(
-        <BrowserRouter>
-          <Navbar />
-        </BrowserRouter>
+        <Provider store={store}>
+          <BrowserRouter>
+            <Navbar />
+          </BrowserRouter>
+        </Provider>
       );
       const navItem = screen.getByRole("link", {
         name: text,
