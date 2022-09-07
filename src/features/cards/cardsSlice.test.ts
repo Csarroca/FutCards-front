@@ -37,7 +37,7 @@ describe("Given a deleteCardActionCreator function", () => {
   });
 });
 
-describe("Given a projectsReducer function", () => {
+describe("Given a cardsReducer function", () => {
   describe("When called with a loadAll action", () => {
     test("Then it should replace the previous users with the passed ones", () => {
       const initialState = [{ ...mockedCard, name: "test" }] as Card[];
@@ -51,8 +51,8 @@ describe("Given a projectsReducer function", () => {
     });
   });
 
-  describe("When called with a deleteProject action", () => {
-    test("Then it should remove the project passed in the action from the state", () => {
+  describe("When called with a deleteCard action", () => {
+    test("Then it should remove the card", () => {
       const initialState = [mockedCard] as Card[];
 
       const expectedResult = [] as Card[];
