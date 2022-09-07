@@ -67,7 +67,7 @@ describe("Given a deleteCard function returned by useAPI function", () => {
   describe("When called with an invalid cardId", () => {
     test("Then it should not dispatch the delete action and should call errorModal function", async () => {
       await act(async () => {
-        await deleteCard("wrongId");
+        await deleteCard("badId");
       });
 
       await waitFor(() => {

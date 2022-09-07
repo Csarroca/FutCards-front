@@ -66,4 +66,16 @@ export const handlers = [
         })
       )
   ),
+  rest.delete(
+    `${process.env.REACT_APP_API_URL}/cards/badId`,
+    async (req, res, ctx) =>
+      res(
+        ctx.status(400),
+        ctx.json({
+          cardDeleted: {
+            error: "Error deleting card",
+          },
+        })
+      )
+  ),
 ];
