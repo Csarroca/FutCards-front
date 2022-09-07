@@ -41,7 +41,11 @@ const FutCard = ({ card }: FutCardProps): JSX.Element => {
               </div>
             </div>
             {card.owner === id && (
-              <FaTimesCircle className="card-delete" onClick={handleDelete} />
+              <FaTimesCircle
+                className="card-delete"
+                onClick={handleDelete}
+                data-testid="delete"
+              />
             )}
 
             <img className="image" src={card.image} alt="player avatar"></img>
