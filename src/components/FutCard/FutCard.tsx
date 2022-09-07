@@ -1,5 +1,6 @@
 import { Card } from "../../features/cards/models/card";
 import FutCardStyled from "./FutCardsStyled";
+import { FaTimesCircle } from "react-icons/fa";
 
 interface FutCardProps {
   card: Card;
@@ -29,6 +30,7 @@ const FutCard = ({ card }: FutCardProps): JSX.Element => {
                 <img src={card.team} alt="club of football" />
               </div>
             </div>
+            <FaTimesCircle className="card-delete" />
 
             <img className="image" src={card.image} alt="player avatar"></img>
             <div className="backfont"></div>
