@@ -4,14 +4,12 @@ const HeaderStyled = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 20vh;
+  width: 100%;
+  height: 100px;
+  margin: 30px 0;
 
   .header {
     width: 85%;
-
-    @media (min-width: 1000px) {
-      width: 800px;
-    }
 
     &-hidden {
       display: none;
