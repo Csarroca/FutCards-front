@@ -10,10 +10,14 @@ export const cardsSlice = createSlice({
     loadAllCards: (previousCards, action: PayloadAction<Card[]>) => [
       ...action.payload,
     ],
+    deleteCard: (previousCards, action: PayloadAction<string>) =>
+      previousCards.filter((card) => card.id !== action.payload),
   },
 });
 
 export const { loadAllCards: loadAllCardsActionCreator } = cardsSlice.actions;
+
+export const { deleteCard: deleteCardActionCreator } = cardsSlice.actions;
 
 export const cardsReducer = cardsSlice.reducer;
 
