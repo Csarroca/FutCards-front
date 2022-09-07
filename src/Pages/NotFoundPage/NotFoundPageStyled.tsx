@@ -7,7 +7,7 @@ const NotFoundPageStyled = styled.div`
   align-items: center;
   background-color: #2b663d;
   color: white;
-  height: 80vh;
+  height: 100vh;
 
   .page-image {
     display: flex;
