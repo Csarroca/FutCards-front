@@ -8,13 +8,13 @@ describe("Given a LoginPage component", () => {
   describe("When it is instanciated", () => {
     test("Then it should show a heading with 'Log in' as a text and a button with 'Create an account' as a text inside", () => {
       const titleText = "Sign in";
-      const buttonText = "REGISTER";
+      const linkText = "here";
 
       wrappedRender(<LoginPage />, { wrapper: Wrapper });
 
       const headingName = screen.getByRole("heading", { name: titleText });
-      const createAccountButton = screen.getByRole("button", {
-        name: buttonText,
+      const createAccountButton = screen.getByRole("link", {
+        name: linkText,
       });
 
       expect(headingName).toBeInTheDocument();
