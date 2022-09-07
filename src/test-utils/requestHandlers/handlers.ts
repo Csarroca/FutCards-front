@@ -52,4 +52,18 @@ export const handlers = [
   rest.get(`${process.env.REACT_APP_API_URL}/cards`, async (req, res, ctx) => {
     return res(ctx.status(200), ctx.json<Card[]>([mockedCard]));
   }),
+
+  rest.delete(
+    `${process.env.REACT_APP_API_URL}/cards/${mockedCard.id}`,
+    async (req, res, ctx) =>
+      res(
+        ctx.status(200),
+        ctx.json({
+          cardDeleted: {
+            id: mockedCard.id,
+            status: "Deleted",
+          },
+        })
+      )
+  ),
 ];
