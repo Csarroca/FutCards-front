@@ -14,6 +14,19 @@ const FutCardStyled = styled.div`
     display: block;
     opacity: 1;
 
+    .card-delete {
+      color: ${styles.colors.cardColor3};
+      position: absolute;
+      right: 20px;
+      top: 0;
+      z-index: 3;
+      height: 35%;
+      width: 25%;
+      box-sizing: border-box;
+      padding: 0 20px;
+      cursor: pointer;
+    }
+
     .card-inner {
       position: absolute;
       top: 0;
