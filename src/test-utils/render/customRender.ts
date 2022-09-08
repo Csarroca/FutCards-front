@@ -1,11 +1,18 @@
-import { render, renderHook } from "@testing-library/react";
+import {
+  render,
+  renderHook,
+  RenderHookOptions,
+  RenderOptions,
+} from "@testing-library/react";
 import { Wrapper } from "./Wrapper";
 
-const customRender = (view: JSX.Element, ...options: any) =>
+const customRender = (view: JSX.Element, ...options: RenderOptions[]) =>
   render(view, { wrapper: Wrapper, ...options });
 
-const customRenderHook = (hook: () => any, ...options: any) =>
-  renderHook(hook, { wrapper: Wrapper, ...options });
+const customRenderHook = (
+  hook: () => any,
+  ...options: RenderHookOptions<unknown>[]
+) => renderHook(hook, { wrapper: Wrapper, ...options });
 
 export * from "@testing-library/react";
 

@@ -6,7 +6,7 @@ import App from "./App";
 describe("Given an App component", () => {
   describe("When instantiated", () => {
     test("Then it should show a heading with the app name and a footer with the copyright", () => {
-      render(<App />, { Wrapper: Wrapper });
+      render(<App />, { wrapper: Wrapper });
 
       const header = screen.getByRole("img");
 
