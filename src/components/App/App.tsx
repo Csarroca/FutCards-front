@@ -9,11 +9,14 @@ import CardsPage from "../../Pages/CardsPage/CardsPage";
 import MyTeamPage from "../../Pages/MyTeamPage/MyTeamPage";
 import CreateCardPage from "../../Pages/CreateCardPage/CreateCardPage";
 import RouteProtector from "../RouteProtector/RouteProtector";
+import Navbar from "../NavBar/Navbar";
 
 function App() {
   return (
     <AppStyled>
       <Header />
+
+      <Navbar />
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/register" element={<RegisterPage />} />
