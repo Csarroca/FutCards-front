@@ -5,7 +5,6 @@ import NavbarStyled from "./NavbarStyled";
 
 const Navbar = () => {
   const { logout } = useUser();
-
   const { pathname } = useLocation();
 
   const handleLogout = (
@@ -15,9 +14,7 @@ const Navbar = () => {
   };
 
   const isRendered =
-    pathname === "/myTeam" || pathname === "/cards" || pathname === "/create";
-
-  const isActive = pathname === "/cards" || pathname === "/create";
+    pathname === "/myTeam" || pathname === "/cards" || pathname === "create";
 
   return (
     <>
@@ -27,33 +24,18 @@ const Navbar = () => {
             <ul className="navbar-list">
               <li className="navbar-list__link">Filter</li>
               <li>
-                <NavLink
-                  to="/create"
-                  className={`navbar-list__link ${
-                    isActive ? "navbar-list__link--active" : ""
-                  }`}
-                >
+                <NavLink to="/create" className="navbar-list__link">
                   Create card
                 </NavLink>
               </li>
 
               <li>
-                <NavLink
-                  to="/cards"
-                  className={`navbar-list__link ${
-                    isActive ? "navbar-list__link--active" : ""
-                  }`}
-                >
+                <NavLink to="/cards" className="navbar-list__link ">
                   Cards
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  to="/myTeam"
-                  className={`navbar-list__link ${
-                    isActive ? "navbar-list__link--active" : ""
-                  }`}
-                >
+                <NavLink to="/MyTeam" className="navbar-list__link">
                   My team
                 </NavLink>
               </li>
