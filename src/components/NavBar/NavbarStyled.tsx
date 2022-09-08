@@ -22,6 +22,10 @@ const NavbarStyled = styled.div`
         display: block;
         text-decoration: none;
         color: white;
+
+        &--active {
+          color: black;
+        }
       }
     }
   }

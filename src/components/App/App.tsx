@@ -26,7 +26,7 @@ function App() {
             </RouteProtector>
           }
         />
-        <Route path="/MyTeam" element={<MyTeamPage />} />
+        <Route path="/myTeam" element={<MyTeamPage />} />
         <Route path="/create" element={<CreateCardPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
