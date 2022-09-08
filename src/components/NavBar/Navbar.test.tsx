@@ -1,57 +1,91 @@
 import { render, screen } from "@testing-library/react";
-import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
-import { store } from "../../app/store/store";
+import * as router from "react-router";
 import Navbar from "./Navbar";
+import { Wrapper } from "../../test-utils/render/Wrapper";
+import userEvent from "@testing-library/user-event";
+
+const mockLogout = jest.fn();
+
+jest.mock("../../hooks/user/useUser", () => () => ({
+  logout: mockLogout,
+}));
 
 describe("Given a Navbar component", () => {
+  const mockNavigate = jest.fn();
+
+  beforeEach(() => {
+    jest.spyOn(router, "useNavigate").mockImplementation(() => mockNavigate);
+  });
+
+  afterEach(() => jest.resetAllMocks());
   describe("When it's instantiated", () => {
-    test("Then it should show Create card inside the Navbar'", () => {
-      const linkText1 = "Create card";
+    beforeEach(() => {
+      const mockLocation = {
+        pathname: "/cards",
+        Location: "",
+        key: "",
+        search: "",
+        hash: "",
+        state: "",
+      };
 
-      render(
-        <Provider store={store}>
-          <BrowserRouter>
-            <Navbar />
-          </BrowserRouter>
-        </Provider>
-      );
-      const navItem = screen.getByRole("link", { name: linkText1 });
-
-      expect(navItem).toBeInTheDocument();
+      jest.spyOn(router, "useLocation").mockImplementation(() => mockLocation);
     });
 
-    test("Then it should show 'Cards' inside the Navbar", () => {
-      const text = "Cards";
+    test("Then it should show 'Create card','Cards','My team','Logout' inside the Navbar'", () => {
+      const text1 = "Create card";
+      const text2 = "Cards";
+      const text3 = "My team";
+      const text4 = "Logout";
 
-      render(
-        <Provider store={store}>
-          <BrowserRouter>
-            <Navbar />
-          </BrowserRouter>
-        </Provider>
-      );
-      const navItem = screen.getByRole("link", {
-        name: text,
-      });
+      render(<Navbar />, { wrapper: Wrapper });
 
-      expect(navItem).toBeInTheDocument();
+      const navItem = [
+        screen.getByRole("link", { name: text1 }),
+        screen.getByRole("link", {
+          name: text2,
+        }),
+        screen.getByRole("link", {
+          name: text3,
+        }),
+        screen.getByRole("link", {
+          name: text4,
+        }),
+      ];
+
+      navItem.forEach((element) => expect(element).toBeInTheDocument());
     });
-    test("Then it should show 'My team' inside the navbar", () => {
-      const text = "My team";
+    describe("and the path is '/cards'", () => {
+      test("Then it should be rendered", () => {
+        render(<Navbar />, { wrapper: Wrapper });
 
-      render(
-        <Provider store={store}>
-          <BrowserRouter>
-            <Navbar />
-          </BrowserRouter>
-        </Provider>
-      );
-      const navItem = screen.getByRole("link", {
-        name: text,
+        const resultNav = screen.getByRole("navigation");
+
+        expect(resultNav).toBeInTheDocument();
       });
+      describe("and the user clicks logout", () => {
+        test("then it will be logout and redirect to login page", async () => {
+          const mockLocation = {
+            pathname: "/destinos",
+            Location: "",
+            key: "",
+            search: "",
+            hash: "",
+            state: "",
+          };
 
-      expect(navItem).toBeInTheDocument();
+          render(<Navbar />, { wrapper: Wrapper });
+
+          jest
+            .spyOn(router, "useLocation")
+            .mockImplementation(() => mockLocation);
+
+          const linkLogout = screen.getByRole("link", { name: "Logout" });
+          await userEvent.click(linkLogout);
+
+          expect(mockNavigate).toHaveBeenCalled();
+        });
+      });
     });
   });
 });

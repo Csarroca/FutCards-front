@@ -4,13 +4,12 @@ import CardsPage from "./CardsPage";
 
 describe("Given a CardsPage component", () => {
   describe("When it is instanciated", () => {
-    test("Then it should show a navbar and a FutCard component", () => {
+    test("Then it should show a CardList component", () => {
       render(<CardsPage />, { wrapper: Wrapper });
 
-      const navbar = screen.getByRole("navigation", { name: "" });
+      const cardList = screen.getByRole("list", { name: "" });
 
-      expect(navbar).toBeInTheDocument();
+      expect(cardList).toBeInTheDocument();
     });
-    test("Then it should show a FutCard list", () => {});
   });
 });

@@ -15,7 +15,6 @@ function App() {
   return (
     <AppStyled>
       <Header />
-
       <Navbar />
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />

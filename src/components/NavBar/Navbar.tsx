@@ -1,4 +1,3 @@
-import path from "path";
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import useUser from "../../hooks/user/useUser";
@@ -6,6 +5,7 @@ import NavbarStyled from "./NavbarStyled";
 
 const Navbar = () => {
   const { logout } = useUser();
+
   const { pathname } = useLocation();
 
   const handleLogout = (
@@ -15,9 +15,9 @@ const Navbar = () => {
   };
 
   const isRendered =
-    pathname === "/cards" || pathname === "/myTeam" || pathname === "create";
+    pathname === "/myTeam" || pathname === "/cards" || pathname === "/create";
 
-  const isActive = pathname === "/cards";
+  const isActive = pathname === "/cards" || pathname === "/create";
 
   return (
     <>
@@ -27,7 +27,12 @@ const Navbar = () => {
             <ul className="navbar-list">
               <li className="navbar-list__link">Filter</li>
               <li>
-                <NavLink to="/create" className="navbar-list__link">
+                <NavLink
+                  to="/create"
+                  className={`navbar-list__link ${
+                    isActive ? "navbar-list__link--active" : ""
+                  }`}
+                >
                   Create card
                 </NavLink>
               </li>
@@ -43,7 +48,12 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/MyTeam" className="navbar-list__link">
+                <NavLink
+                  to="/myTeam"
+                  className={`navbar-list__link ${
+                    isActive ? "navbar-list__link--active" : ""
+                  }`}
+                >
                   My team
                 </NavLink>
               </li>
