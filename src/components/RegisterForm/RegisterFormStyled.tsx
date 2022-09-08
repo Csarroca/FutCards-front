@@ -29,6 +29,9 @@ const RegisterFormStyled = styled.div`
 
   .error {
     border-bottom: red solid 2px;
+    &-text {
+      color: red;
+    }
   }
 `;
 
