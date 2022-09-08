@@ -3,6 +3,7 @@ import axios, { AxiosResponse } from "axios";
 import { useCallback } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/store/hooks";
 import {
+  createCardActionCreator,
   deleteCardActionCreator,
   loadAllCardsActionCreator,
 } from "../../features/cards/cardsSlice";
@@ -57,7 +58,25 @@ const useApi = () => {
     [dispatch, token]
   );
 
-  return { cards, getAllCards, deleteCard };
+  const createCard = async (newCard: Card) => {
+    try {
+      await axios.post(`${url}/cards/create`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.token}`,
+        },
+        body: JSON.stringify(newCard),
+      });
+
+      dispatch(createCardActionCreator(newCard));
+
+      successModal("Card created successfully!");
+    } catch (error) {
+      errorModal("Error creating card");
+    }
+  };
+
+  return { cards, getAllCards, deleteCard, createCard };
 };
 
 export default useApi;

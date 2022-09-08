@@ -12,12 +12,19 @@ export const cardsSlice = createSlice({
     ],
     deleteCard: (previousCards, action: PayloadAction<string>) =>
       previousCards.filter((card) => card.id !== action.payload),
+
+    createCard: (previousCards, action: PayloadAction<Card>) => [
+      ...previousCards,
+      action.payload,
+    ],
   },
 });
 
 export const { loadAllCards: loadAllCardsActionCreator } = cardsSlice.actions;
 
 export const { deleteCard: deleteCardActionCreator } = cardsSlice.actions;
+
+export const { createCard: createCardActionCreator } = cardsSlice.actions;
 
 export const cardsReducer = cardsSlice.reducer;
 
