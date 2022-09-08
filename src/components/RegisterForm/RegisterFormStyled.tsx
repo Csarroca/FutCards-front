@@ -13,7 +13,7 @@ const RegisterFormStyled = styled.div`
       border-bottom: 1px solid ${styles.colors.darkButtonHover};
     }
 
-    &__register__submit {
+    &__submit {
     }
     gap: 50px;
   }

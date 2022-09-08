@@ -59,9 +59,9 @@ const useUser = () => {
         userName,
         password,
       });
+
       successModal("Register successfully!");
       navigate("/login");
-      successModal("Register successfully!");
     } catch (error) {
       errorModal("Password or username invalid");
     }
