@@ -59,6 +59,14 @@ const RegisterForm = (): JSX.Element => {
           value={registerData.userName}
           onChange={handleChange}
         />
+
+        {input.userName === "error" && (
+          <span className="error-text">
+            {" "}
+            The userName should have minimum 4 letters{" "}
+          </span>
+        )}
+
         <label htmlFor="password">Password</label>
 
         <input
@@ -72,6 +80,13 @@ const RegisterForm = (): JSX.Element => {
           value={registerData.password}
           onChange={handleChange}
         />
+
+        {input.password === "error" && (
+          <span className="error-text">
+            {" "}
+            The password should have minimum 8 characters{" "}
+          </span>
+        )}
 
         <Button
           isDisabled={!formValidate}
