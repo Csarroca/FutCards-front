@@ -59,6 +59,7 @@ const useUser = () => {
         userName,
         password,
       });
+
       successModal("Register successfully!");
       navigate("/login");
     } catch (error) {

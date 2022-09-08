@@ -65,4 +65,50 @@ describe("Given a Register component", () => {
       expect(mockUser).toHaveBeenCalled();
     });
   });
+  describe("When the user type a name with less than 4 letters", () => {
+    test("Then it shouldn't call the register function", async () => {
+      const userName = "Ali";
+      const userPassword = "12345678";
+
+      render(<RegisterForm />);
+
+      const usernameInput = screen.getByLabelText(
+        "Username"
+      ) as HTMLInputElement;
+      const passwordInput = screen.getByLabelText(
+        "Password"
+      ) as HTMLInputElement;
+
+      const submitButton = screen.getByRole("button", { name: "SING UP" });
+
+      await userEvent.type(usernameInput, userName);
+      await userEvent.type(passwordInput, userPassword);
+      await userEvent.click(submitButton);
+
+      expect(mockUser).not.toHaveBeenCalled();
+    });
+  });
+  describe("When the user type a password with less than 8 characters", () => {
+    test("Then it shouldn't call the register function", async () => {
+      const userName = "Alibaba";
+      const userPassword = "12345";
+
+      render(<RegisterForm />);
+
+      const usernameInput = screen.getByLabelText(
+        "Username"
+      ) as HTMLInputElement;
+      const passwordInput = screen.getByLabelText(
+        "Password"
+      ) as HTMLInputElement;
+
+      const submitButton = screen.getByRole("button", { name: "SING UP" });
+
+      await userEvent.type(usernameInput, userName);
+      await userEvent.type(passwordInput, userPassword);
+      await userEvent.click(submitButton);
+
+      expect(mockUser).not.toHaveBeenCalled();
+    });
+  });
 });

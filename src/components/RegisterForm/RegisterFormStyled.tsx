@@ -13,7 +13,7 @@ const RegisterFormStyled = styled.div`
       border-bottom: 1px solid ${styles.colors.darkButtonHover};
     }
 
-    &__register__submit {
+    &__submit {
     }
     gap: 50px;
   }
@@ -25,6 +25,13 @@ const RegisterFormStyled = styled.div`
   input {
     padding-left: 15px;
     padding-bottom: 15px;
+  }
+
+  .error {
+    border-bottom: red solid 2px;
+    &-text {
+      color: red;
+    }
   }
 `;
 
