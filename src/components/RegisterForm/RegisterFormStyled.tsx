@@ -26,6 +26,10 @@ const RegisterFormStyled = styled.div`
     padding-left: 15px;
     padding-bottom: 15px;
   }
+
+  .error {
+    border-bottom: red solid 2px;
+  }
 `;
 
 export default RegisterFormStyled;

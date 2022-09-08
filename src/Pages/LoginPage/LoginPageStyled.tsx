@@ -23,7 +23,7 @@ const LoginPageStyled = styled.div`
   }
 
   .login-link {
-    padding-left: 10px;
+    text-decoration: none;
   }
 
   @media (min-width: 1000px) {
