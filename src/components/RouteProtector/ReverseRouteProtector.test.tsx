@@ -1,7 +1,7 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
-import RouteProtector from "./RouteProtector";
+import ReverseRouteProtector from "./ReverseRouteProtector";
 
 const mockUseNavigate = jest.fn();
 
@@ -9,12 +9,13 @@ jest.mock("react-router-dom", () => ({
   useNavigate: () => mockUseNavigate,
 }));
 
-describe("Given RouteProtector component", () => {
-  describe("When it's intantiated without a logged user", () => {
-    test("Then it should call navigate to login", () => {
+describe("Given a ReverseRouterProtector component", () => {
+  describe("When it's intantiated and there is a user logged", () => {
+    test("Then it should call navigate to cards", () => {
+      const headingText = "Test";
       const userMockSlice = createSlice({
         name: "users",
-        initialState: { UserName: "", id: "", token: "" },
+        initialState: { name: "Paco" },
         reducers: {},
       });
       const mockStore = configureStore({
@@ -23,35 +24,35 @@ describe("Given RouteProtector component", () => {
 
       render(
         <Provider store={mockStore}>
-          <RouteProtector>
-            <h1>Sign in</h1>
-          </RouteProtector>
+          <ReverseRouteProtector>
+            <h1>{headingText}</h1>
+          </ReverseRouteProtector>
         </Provider>
       );
 
-      expect(mockUseNavigate).toHaveBeenCalledWith("/login");
+      expect(mockUseNavigate).toHaveBeenCalledWith("/cards");
     });
 
     test("Then it should render its children when the user is logged", () => {
+      const headingText = "Test";
       const userMockSlice = createSlice({
         name: "users",
-        initialState: { name: "paco" },
+        initialState: { name: "paco", id: "testId", token: "testToken" },
         reducers: {},
       });
       const mockStore = configureStore({
         reducer: { users: userMockSlice.reducer },
       });
-
+      debugger;
       render(
         <Provider store={mockStore}>
-          <RouteProtector>
-            <h1>Sign in</h1>
-          </RouteProtector>
+          <ReverseRouteProtector>
+            <h1>{headingText}</h1>
+          </ReverseRouteProtector>
         </Provider>
       );
-
       const receivedText = screen.getByRole("heading", {
-        name: "Sign in",
+        name: headingText,
       });
 
       expect(receivedText).toBeInTheDocument();
