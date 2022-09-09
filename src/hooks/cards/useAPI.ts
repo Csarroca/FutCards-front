@@ -60,7 +60,6 @@ const useApi = () => {
 
   const createCard = async (newCard: ProtoCard) => {
     try {
-      console.log(token);
       const { data } = await axios.post(`${url}/cards/create`, newCard, {
         headers: {
           "Content-Type": "multipart/form-data",
