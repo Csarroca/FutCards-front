@@ -14,9 +14,9 @@ export interface ProtoCard {
   height: number;
   age: number;
   foot: string;
+  owner: string;
 }
 
 export interface Card extends ProtoCard {
   id: string;
-  owner: string;
 }

@@ -10,8 +10,21 @@ import MyTeamPage from "../../Pages/MyTeamPage/MyTeamPage";
 import CreateCardPage from "../../Pages/CreateCardPage/CreateCardPage";
 import RouteProtector from "../RouteProtector/RouteProtector";
 import Navbar from "../NavBar/Navbar";
+import { useAppDispatch } from "../../app/store/hooks";
+import fetchToken from "../../utils/auth";
+import { PayloadAction } from "@reduxjs/toolkit";
+import { User } from "../../features/users/models/User";
+import { loginUsers } from "../../features/users/UserSlice";
 
 function App() {
+  const token = localStorage.getItem("token");
+
+  const dispach = useAppDispatch();
+
+  if (token) {
+    const user = fetchToken(token);
+    dispach<PayloadAction<User>>(loginUsers(user));
+  }
   return (
     <AppStyled>
       <Header />
