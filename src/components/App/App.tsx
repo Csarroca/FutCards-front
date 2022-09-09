@@ -10,11 +10,14 @@ import MyTeamPage from "../../Pages/MyTeamPage/MyTeamPage";
 import CreateCardPage from "../../Pages/CreateCardPage/CreateCardPage";
 import RouteProtector from "../RouteProtector/RouteProtector";
 import Navbar from "../NavBar/Navbar";
+
+import ReverseRouteProtector from "../RouteProtector/ReverseRouteProtector";
 import { useAppDispatch } from "../../app/store/hooks";
 import fetchToken from "../../utils/auth";
-import { PayloadAction } from "@reduxjs/toolkit";
 import { User } from "../../features/users/models/User";
 import { loginUsers } from "../../features/users/UserSlice";
+import { PayloadAction } from "@reduxjs/toolkit";
+
 
 function App() {
   const token = localStorage.getItem("token");
@@ -25,14 +28,23 @@ function App() {
     const user = fetchToken(token);
     dispach<PayloadAction<User>>(loginUsers(user));
   }
+
   return (
     <AppStyled>
       <Header />
       <Navbar />
       <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/" element={<Navigate to="/register" />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
+
+        <Route
+          path="/login"
+          element={
+            <ReverseRouteProtector>
+              <LoginPage />
+            </ReverseRouteProtector>
+          }
+        />
         <Route
           path="/cards"
           element={
