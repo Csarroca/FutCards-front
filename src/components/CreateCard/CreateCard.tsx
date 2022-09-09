@@ -18,7 +18,7 @@ const CreateCard = (): JSX.Element => {
     defense: 0,
     shooting: 0,
     dribbling: 0,
-    height: 0.0,
+    height: 0,
     age: 0,
     foot: "",
   };
