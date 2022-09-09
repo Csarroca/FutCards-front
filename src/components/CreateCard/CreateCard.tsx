@@ -4,6 +4,8 @@ import useApi from "../../hooks/cards/useAPI";
 import Button from "../Button/Button";
 import { ToastContainer } from "react-toastify";
 
+let formData = new FormData();
+
 const CreateCard = (): JSX.Element => {
   const initialCard: ProtoCard = {
     name: "",
@@ -18,7 +20,7 @@ const CreateCard = (): JSX.Element => {
     defense: 0,
     shooting: 0,
     dribbling: 0,
-    height: 0.0,
+    height: 0,
     age: 0,
     foot: "",
   };
@@ -38,6 +40,10 @@ const CreateCard = (): JSX.Element => {
     createCard(newCard);
 
     setNewCard(initialCard);
+  };
+
+  const onChangeFile = (event: React.ChangeEvent<HTMLInputElement>) => {
+    formData.append("image", event.target.files![0]);
   };
 
   return (
@@ -131,10 +137,10 @@ const CreateCard = (): JSX.Element => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="physical">Physical: </label>
+          <label htmlFor="physicall">Physical: </label>
           <input
             type="number"
-            id="physical"
+            id="physicall"
             value={newCard.physicall}
             onChange={onChangeField}
             required
@@ -186,7 +192,7 @@ const CreateCard = (): JSX.Element => {
         </div>
         <div className="form-group">
           <label htmlFor="image">Image: </label>
-          <input type="url" value={newCard.image} onChange={onChangeField} />
+          <input type="file" value={newCard.image} onChange={onChangeFile} />
         </div>
         <div className="form-group">
           <Button
