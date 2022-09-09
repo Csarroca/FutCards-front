@@ -1,68 +1,68 @@
-//import { useAppSelector } from "../../app/store/hooks";
+import { useNavigate } from "react-router-dom";
+import { Card } from "../../features/cards/models/card";
 import Button from "../Button/Button";
 
-const DetailedCard = (): JSX.Element => {
-  // const { id } = useAppSelector((state) => state.users);
+interface DetailedCardProps {
+  card: Card;
+}
 
-  // const { deleteCard } = useApi(); crear get by id
-
-  // const handleDelete = (event: React.MouseEvent<SVGElement, MouseEvent>) => {
-  //   deleteCard(card.id);
-  // };
+const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
+  let isDisable = false;
+  const navigate = useNavigate();
 
   return (
     <>
       <div className="details-group">
         <h2>NAME</h2>
-        <span>Name</span>
+        <span>{card.name}</span>
       </div>
       <div className="details-group">
         <h2>NATIONALLITY</h2>
-        <span>NATIONALLITY</span>
+        <span>{card.nacionallity}</span>
       </div>
       <div className="details-group">
         <h2>OVERALL RATING</h2>
-        <span>OVERALL RATING</span>
+        <span>{card.overall}</span>
       </div>
       <div className="details-group">
         <h2>TEAM</h2>
-        <span>TEAM</span>
+        <span>{card.team}</span>
       </div>
       <div className="details-group">
         <h2>PACE</h2>
-        <span>PACE</span>
+        <span>{card.pace}</span>
       </div>
       <div className="details-group">
         <h2>DRIBBLING</h2>
-        <span>DRIBBLING</span>
+        <span>{card.dribbling}</span>
       </div>
       <div className="details-group">
         <h2>HEIGHT</h2>
-        <span>HEIGHT</span>
+        <span>{card.height}</span>
       </div>
       <div className="details-group">
         <h2>SHOOTING</h2>
-        <span>SHOOTING</span>
+        <span>{card.shooting}</span>
       </div>
       <div className="details-group">
         <h2>DEFENCE</h2>
-        <span>DEFENCE</span>
+        <span>{card.defense}</span>
       </div>
       <div className="details-group">
         <h2>FOOT</h2>
-        <span>R</span>
+        <span>{card.foot}</span>
       </div>
       <div className="details-group">
         <h2>PASSING</h2>
-        <span>PASSING</span>
+        <span>{card.passing}</span>
       </div>
       <div className="details-group">
         <h2>PHYSICAL</h2>
-        <span>PHYSICAL</span>
+        <span>{card.physicall}</span>
       </div>
       <div className="details-group">
         <h2>AGE</h2>
-        <span>AGE</span>
+        <span>{card.age}</span>
       </div>
 
       <div className="details-group">

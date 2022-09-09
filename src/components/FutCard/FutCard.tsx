@@ -3,6 +3,7 @@ import FutCardStyled from "./FutCardsStyled";
 import { FaTimesCircle } from "react-icons/fa";
 import { useAppSelector } from "../../app/store/hooks";
 import useApi from "../../hooks/cards/useAPI";
+import { useNavigate } from "react-router-dom";
 
 interface FutCardProps {
   card: Card;
@@ -10,6 +11,7 @@ interface FutCardProps {
 
 const FutCard = ({ card }: FutCardProps): JSX.Element => {
   const { id } = useAppSelector((state) => state.users);
+  const navigate = useNavigate();
 
   const { deleteCard } = useApi();
 
@@ -19,7 +21,12 @@ const FutCard = ({ card }: FutCardProps): JSX.Element => {
 
   return (
     <FutCardStyled>
-      <div className="card">
+      <div
+        className="card"
+        onClick={() => {
+          navigate(`/cards/details/${card.id}`);
+        }}
+      >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 267.3 427.3">
           <clipPath id="svgPath">
             <path
