@@ -5,16 +5,15 @@ import Button from "../Button/Button";
 import { ToastContainer } from "react-toastify";
 
 const CreateCard = (): JSX.Element => {
-  const initialCard = {
+  const initialCard: ProtoCard = {
     name: "",
     image: "",
     position: "",
     nacionallity: "",
-
     team: "",
     overall: 0,
     physicall: 0,
-    pace: "",
+    pace: 0,
     passing: 0,
     defense: 0,
     shooting: 0,
@@ -22,7 +21,6 @@ const CreateCard = (): JSX.Element => {
     height: 0.0,
     age: 0,
     foot: "",
-    owner: "",
   };
 
   const { createCard } = useApi();
@@ -37,7 +35,7 @@ const CreateCard = (): JSX.Element => {
 
   const handleCreate = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    //createCard(newCard);
+    createCard(newCard);
 
     setNewCard(initialCard);
   };
@@ -90,10 +88,10 @@ const CreateCard = (): JSX.Element => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="dribling">Dribling: </label>
+          <label htmlFor="dribbling">Dribbling: </label>
           <input
             type="number"
-            id="dribling"
+            id="dribbling"
             value={newCard.dribbling}
             onChange={onChangeField}
             required
@@ -111,10 +109,10 @@ const CreateCard = (): JSX.Element => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="Defense">Defense: </label>
+          <label htmlFor="defense">Defense: </label>
           <input
             type="number"
-            id="creationData"
+            id="defense"
             value={newCard.defense}
             onChange={onChangeField}
             required
@@ -122,10 +120,10 @@ const CreateCard = (): JSX.Element => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="Passing">Passing: </label>
+          <label htmlFor="passing">Passing: </label>
           <input
             type="number"
-            id="creationData"
+            id="passing"
             value={newCard.passing}
             onChange={onChangeField}
             required
@@ -136,7 +134,7 @@ const CreateCard = (): JSX.Element => {
           <label htmlFor="physical">Physical: </label>
           <input
             type="number"
-            id="creationData"
+            id="physical"
             value={newCard.physicall}
             onChange={onChangeField}
             required
@@ -147,7 +145,7 @@ const CreateCard = (): JSX.Element => {
           <label htmlFor="height">Height: </label>
           <input
             type="number"
-            id="creationData"
+            id="height"
             value={newCard.height}
             onChange={onChangeField}
             required
@@ -158,7 +156,7 @@ const CreateCard = (): JSX.Element => {
           <label htmlFor="foot">Foot: </label>
           <input
             type="text"
-            id="creationData"
+            id="foot"
             value={newCard.foot}
             onChange={onChangeField}
             required
@@ -169,19 +167,8 @@ const CreateCard = (): JSX.Element => {
           <label htmlFor="age">Age: </label>
           <input
             type="number"
-            id="creationData"
+            id="age"
             value={newCard.age}
-            onChange={onChangeField}
-            required
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="Physical">Physical: </label>
-          <input
-            type="number"
-            id="creationData"
-            value={newCard.physicall}
             onChange={onChangeField}
             required
           />
@@ -191,7 +178,7 @@ const CreateCard = (): JSX.Element => {
           <label htmlFor="position">Position: </label>
           <input
             type="text"
-            id="creationData"
+            id="position"
             value={newCard.position}
             onChange={onChangeField}
             required

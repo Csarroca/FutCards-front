@@ -16,7 +16,7 @@ const LoginFormStyled = styled.div`
   }
   input {
     padding-left: 15px;
-    padding-bottom: 15px;
+    height: 40px;
     background-color: ${styles.colors.backgroundLight};
     border: none;
     border-bottom: 1px solid ${styles.colors.darkButtonHover};

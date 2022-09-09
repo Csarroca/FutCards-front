@@ -7,7 +7,7 @@ import {
   deleteCardActionCreator,
   loadAllCardsActionCreator,
 } from "../../features/cards/cardsSlice";
-import { Card } from "../../features/cards/models/card";
+import { Card, ProtoCard } from "../../features/cards/models/card";
 import { toast } from "react-toastify";
 
 export const successModal = (message: string) =>
@@ -58,9 +58,9 @@ const useApi = () => {
     [dispatch, token]
   );
 
-  const createCard = async (newCard: Card) => {
+  const createCard = async (newCard: ProtoCard) => {
     try {
-      await axios.post(`${url}/cards/create`, {
+      const { data } = await axios.post(`${url}/cards/create`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.token}`,
@@ -68,7 +68,7 @@ const useApi = () => {
         body: JSON.stringify(newCard),
       });
 
-      dispatch(createCardActionCreator(newCard));
+      dispatch(createCardActionCreator(data));
 
       successModal("Card created successfully!");
     } catch (error) {
