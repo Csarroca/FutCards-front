@@ -33,11 +33,11 @@ describe("Given a ReverseRouterProtector component", () => {
       expect(mockUseNavigate).toHaveBeenCalledWith("/cards");
     });
 
-    test("Then it should render its children when the user is logged", () => {
+    test("Then it should render its children when the user is not logged", () => {
       const headingText = "Test";
       const userMockSlice = createSlice({
         name: "users",
-        initialState: { name: "paco", id: "testId", token: "testToken" },
+        initialState: { name: "", id: "", token: "" },
         reducers: {},
       });
       const mockStore = configureStore({
