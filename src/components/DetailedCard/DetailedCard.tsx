@@ -1,13 +1,8 @@
-import { useAppSelector } from "../../app/store/hooks";
-import { Card } from "../../features/cards/models/card";
+//import { useAppSelector } from "../../app/store/hooks";
 import Button from "../Button/Button";
 
-interface FutCardProps {
-  card: Card;
-}
-
-const DetailedCard = ({ card }: FutCardProps): JSX.Element => {
-  const { id } = useAppSelector((state) => state.users);
+const DetailedCard = (): JSX.Element => {
+  // const { id } = useAppSelector((state) => state.users);
 
   // const { deleteCard } = useApi(); crear get by id
 

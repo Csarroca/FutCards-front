@@ -17,7 +17,7 @@ import fetchToken from "../../utils/auth";
 import { User } from "../../features/users/models/User";
 import { loginUsers } from "../../features/users/UserSlice";
 import { PayloadAction } from "@reduxjs/toolkit";
-
+import DetailedCard from "../DetailedCard/DetailedCard";
 
 function App() {
   const token = localStorage.getItem("token");
@@ -54,6 +54,7 @@ function App() {
           }
         />
         <Route path="/my-team" element={<MyTeamPage />} />
+        <Route path="/details" element={<DetailedCard />} />
         <Route path="/create" element={<CreateCardPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

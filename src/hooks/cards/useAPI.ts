@@ -75,8 +75,18 @@ const useApi = () => {
       errorModal("Error creating card");
     }
   };
+  const getCardById = useCallback(async (cardId: string) => {
+    try {
+      const { data } = await axios.get(`${url}/${cardId}`);
+      return data;
+    } catch (error) {
+      errorModal("Can not show details from this card");
+    }
+  }, []);
 
-  return { cards, getAllCards, deleteCard, createCard };
+  toast.dismiss();
+
+  return { cards, getAllCards, deleteCard, createCard, getCardById };
 };
 
 export default useApi;
