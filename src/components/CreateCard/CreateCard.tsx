@@ -4,6 +4,8 @@ import useApi from "../../hooks/cards/useAPI";
 import Button from "../Button/Button";
 import { ToastContainer } from "react-toastify";
 
+let formData = new FormData();
+
 const CreateCard = (): JSX.Element => {
   const initialCard: ProtoCard = {
     name: "",
@@ -18,7 +20,7 @@ const CreateCard = (): JSX.Element => {
     defense: 0,
     shooting: 0,
     dribbling: 0,
-    height: 0.0,
+    height: 0,
     age: 0,
     foot: "",
   };
@@ -38,6 +40,11 @@ const CreateCard = (): JSX.Element => {
     createCard(newCard);
 
     setNewCard(initialCard);
+  };
+
+  const onChangeFile = (event: React.ChangeEvent<HTMLInputElement>) => {
+    formData.append("image", event.target.files![0]);
+    setNewCard({ ...newCard, image: event.target.value });
   };
 
   return (
@@ -79,77 +86,112 @@ const CreateCard = (): JSX.Element => {
         <div className="form-group">
           <label htmlFor="pace">Pace: </label>
           <input
-            type="number"
+            min="0"
+            max="99"
+            type="range"
             id="pace"
             value={newCard.pace}
             onChange={onChangeField}
             required
           />
+          <output id="pace">{newCard.pace} </output>
         </div>
 
         <div className="form-group">
           <label htmlFor="dribbling">Dribbling: </label>
           <input
-            type="number"
+            min="0"
+            max="99"
+            type="range"
             id="dribbling"
             value={newCard.dribbling}
             onChange={onChangeField}
             required
           />
+          <output id="pace">{newCard.dribbling} </output>
         </div>
 
         <div className="form-group">
           <label htmlFor="shooting">Shooting: </label>
           <input
-            type="number"
+            min="0"
+            max="99"
+            type="range"
             id="shooting"
             value={newCard.shooting}
             onChange={onChangeField}
             required
           />
+          <output id="pace">{newCard.shooting} </output>
         </div>
         <div className="form-group">
           <label htmlFor="defense">Defense: </label>
           <input
-            type="number"
+            min="0"
+            max="99"
+            type="range"
             id="defense"
             value={newCard.defense}
             onChange={onChangeField}
             required
           />
+          <output id="pace">{newCard.defense} </output>
         </div>
 
         <div className="form-group">
           <label htmlFor="passing">Passing: </label>
           <input
-            type="number"
+            min="0"
+            max="99"
+            type="range"
             id="passing"
             value={newCard.passing}
             onChange={onChangeField}
             required
           />
+          <output id="pace">{newCard.passing} </output>
         </div>
 
         <div className="form-group">
-          <label htmlFor="physical">Physical: </label>
+          <label htmlFor="physicall">Physical: </label>
           <input
-            type="number"
-            id="physical"
+            min="0"
+            max="99"
+            type="range"
+            id="physicall"
             value={newCard.physicall}
             onChange={onChangeField}
             required
           />
+          <output id="pace">{newCard.physicall} </output>
         </div>
 
         <div className="form-group">
-          <label htmlFor="height">Height: </label>
+          <label htmlFor="height">Height: cm</label>
           <input
-            type="number"
+            min="0"
+            max="220"
+            type="range"
             id="height"
             value={newCard.height}
             onChange={onChangeField}
             required
           />
+          <output id="pace">{newCard.height} </output>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="age">Age: </label>
+          <input
+            min="0"
+            max="99"
+            type="range"
+            id="age"
+            value={newCard.age}
+            onChange={onChangeField}
+            required
+          />
+          <output id="pace">{newCard.age} </output>
         </div>
 
         <div className="form-group">
@@ -158,17 +200,6 @@ const CreateCard = (): JSX.Element => {
             type="text"
             id="foot"
             value={newCard.foot}
-            onChange={onChangeField}
-            required
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="age">Age: </label>
-          <input
-            type="number"
-            id="age"
-            value={newCard.age}
             onChange={onChangeField}
             required
           />
@@ -186,7 +217,7 @@ const CreateCard = (): JSX.Element => {
         </div>
         <div className="form-group">
           <label htmlFor="image">Image: </label>
-          <input type="url" value={newCard.image} onChange={onChangeField} />
+          <input type="file" value={newCard.image} onChange={onChangeFile} />
         </div>
         <div className="form-group">
           <Button
