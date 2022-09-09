@@ -6,18 +6,20 @@ interface RouteProtectorProps {
   children: JSX.Element;
 }
 
-const RouteProtector = ({ children }: RouteProtectorProps): JSX.Element => {
+const ReverseRouteProtector = ({
+  children,
+}: RouteProtectorProps): JSX.Element => {
   const user = useAppSelector((state) => state.users.id);
   const navigate = useNavigate();
   const logged = user === "" ? false : true;
 
   useEffect(() => {
-    if (!logged) {
-      navigate("/login");
+    if (logged) {
+      navigate("/cards");
     }
   }, [logged, navigate]);
 
-  return logged ? children : <></>;
+  return !logged ? children : <></>;
 };
 
-export default RouteProtector;
+export default ReverseRouteProtector;
