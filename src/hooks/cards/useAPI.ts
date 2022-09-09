@@ -3,10 +3,11 @@ import axios, { AxiosResponse } from "axios";
 import { useCallback } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/store/hooks";
 import {
+  createCardActionCreator,
   deleteCardActionCreator,
   loadAllCardsActionCreator,
 } from "../../features/cards/cardsSlice";
-import { Card } from "../../features/cards/models/card";
+import { Card, ProtoCard } from "../../features/cards/models/card";
 import { toast } from "react-toastify";
 
 export const successModal = (message: string) =>
@@ -57,7 +58,25 @@ const useApi = () => {
     [dispatch, token]
   );
 
-  return { cards, getAllCards, deleteCard };
+  const createCard = async (newCard: ProtoCard) => {
+    try {
+      const { data } = await axios.post(`${url}/cards/create`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.token}`,
+        },
+        body: JSON.stringify(newCard),
+      });
+
+      dispatch(createCardActionCreator(data));
+
+      successModal("Card created successfully!");
+    } catch (error) {
+      errorModal("Error creating card");
+    }
+  };
+
+  return { cards, getAllCards, deleteCard, createCard };
 };
 
 export default useApi;

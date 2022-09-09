@@ -14,7 +14,7 @@ const Navbar = () => {
   };
 
   const isRendered =
-    pathname === "/myTeam" || pathname === "/cards" || pathname === "create";
+    pathname === "/my-team" || pathname === "/cards" || pathname === "/create";
 
   return (
     <>
@@ -35,7 +35,7 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/MyTeam" className="navbar-list__link">
+                <NavLink to="/my-team" className="navbar-list__link">
                   My team
                 </NavLink>
               </li>

@@ -55,7 +55,7 @@ const LoginForm = (): JSX.Element => {
           id="password"
           type="password"
           name="password"
-          placeholder="password"
+          placeholder="Password"
           required
           autoComplete="off"
           value={loginData.password}
