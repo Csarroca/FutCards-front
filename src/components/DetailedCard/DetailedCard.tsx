@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { Card } from "../../features/cards/models/card";
 import Button from "../Button/Button";
 
@@ -7,9 +6,6 @@ interface DetailedCardProps {
 }
 
 const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
-  let isDisable = false;
-  const navigate = useNavigate();
-
   return (
     <>
       <div className="details-group">
