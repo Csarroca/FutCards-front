@@ -17,6 +17,11 @@ export const cardsSlice = createSlice({
       ...previousCards,
       action.payload,
     ],
+    updateCard: (previousState, action: PayloadAction<Card>) => {
+      return previousState.map((card) =>
+        card.id === action.payload.id ? action.payload : card
+      );
+    },
   },
 });
 
