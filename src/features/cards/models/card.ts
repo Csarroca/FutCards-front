@@ -1,6 +1,6 @@
 export interface ProtoCard {
   name: string;
-  image: string;
+  image?: string;
   position: string;
   nacionallity: string;
   team: string;

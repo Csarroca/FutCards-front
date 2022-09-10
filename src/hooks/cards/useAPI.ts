@@ -60,12 +60,11 @@ const useApi = () => {
 
   const createCard = async (newCard: ProtoCard) => {
     try {
-      const { data } = await axios.post(`${url}/cards/create`, {
+      const { data } = await axios.post(`${url}/cards/create`, newCard, {
         headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.token}`,
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(newCard),
       });
 
       dispatch(createCardActionCreator(data));
