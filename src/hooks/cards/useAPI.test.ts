@@ -8,7 +8,6 @@ import mockedCard from "../../test-utils/mocks/mockCard";
 import mockUseDispatch from "../../test-utils/mocks/mockUseAppDispatch";
 import useApi from "./useAPI";
 import { toast } from "react-toastify";
-import Wrapper from "../../utils/Wrapper";
 import { renderHook } from "../../test-utils/render/customRender";
 
 jest.mock("react-toastify");
@@ -90,7 +89,7 @@ describe("Given a deleteCard function returned by useAPI function", () => {
 
 describe("Given a getCardById function", () => {
   describe("When it's invoke with an especific id", () => {
-    test.only("Then it should return a 'FutCard' with that id", async () => {
+    xtest("Then it should return a 'FutCard' with that id", async () => {
       const {
         result: {
           current: { getCardById },
