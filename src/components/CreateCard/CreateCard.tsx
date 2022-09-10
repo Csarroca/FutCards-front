@@ -84,8 +84,9 @@ const CreateCard = (): JSX.Element => {
             />
           </div>
 
-          <div className="form-group">
+          <div className="form-group range">
             <label htmlFor="pace">Pace</label>
+            <output id="pace">{newCard.pace}</output>
             <input
               min="0"
               max="99"
@@ -95,11 +96,11 @@ const CreateCard = (): JSX.Element => {
               onChange={onChangeField}
               required
             />
-            <output id="pace">{newCard.pace}</output>
           </div>
 
-          <div className="form-group">
+          <div className="form-group range">
             <label htmlFor="dribbling">Dribbling</label>
+            <output id="dribbling">{newCard.dribbling}</output>
             <input
               min="0"
               max="99"
@@ -109,11 +110,11 @@ const CreateCard = (): JSX.Element => {
               onChange={onChangeField}
               required
             />
-            <output id="dribbling">{newCard.dribbling}</output>
           </div>
 
-          <div className="form-group">
+          <div className="form-group range">
             <label htmlFor="shooting">Shooting</label>
+            <output id="shooting">{newCard.shooting}</output>
             <input
               min="0"
               max="99"
@@ -123,10 +124,10 @@ const CreateCard = (): JSX.Element => {
               onChange={onChangeField}
               required
             />
-            <output id="shooting">{newCard.shooting}</output>
           </div>
-          <div className="form-group">
+          <div className="form-group range">
             <label htmlFor="defense">Defense</label>
+            <output id="defense">{newCard.defense}</output>
             <input
               min="0"
               max="99"
@@ -136,11 +137,11 @@ const CreateCard = (): JSX.Element => {
               onChange={onChangeField}
               required
             />
-            <output id="defense">{newCard.defense}</output>
           </div>
 
-          <div className="form-group">
+          <div className="form-group range">
             <label htmlFor="passing">Passing</label>
+            <output id="passing">{newCard.passing}</output>
             <input
               min="0"
               max="99"
@@ -150,11 +151,11 @@ const CreateCard = (): JSX.Element => {
               onChange={onChangeField}
               required
             />
-            <output id="passing">{newCard.passing}</output>
           </div>
 
-          <div className="form-group">
+          <div className="form-group range">
             <label htmlFor="physicall">Physical</label>
+            <output id="physicall">{newCard.physicall}</output>
             <input
               min="0"
               max="99"
@@ -164,11 +165,11 @@ const CreateCard = (): JSX.Element => {
               onChange={onChangeField}
               required
             />
-            <output id="physicall">{newCard.physicall}</output>
           </div>
 
-          <div className="form-group">
+          <div className="form-group range">
             <label htmlFor="height">Height</label>
+            <output id="height">{newCard.height}</output>
             <input
               min="0"
               max="220"
@@ -178,11 +179,11 @@ const CreateCard = (): JSX.Element => {
               onChange={onChangeField}
               required
             />
-            <output id="height">{newCard.height}</output>
           </div>
 
-          <div className="form-group">
+          <div className="form-group range">
             <label htmlFor="age">Age</label>
+            <output id="age">{newCard.age}</output>
             <input
               min="0"
               max="99"
@@ -192,7 +193,6 @@ const CreateCard = (): JSX.Element => {
               onChange={onChangeField}
               required
             />
-            <output id="age">{newCard.age}</output>
           </div>
 
           <div className="form-group">
@@ -218,7 +218,16 @@ const CreateCard = (): JSX.Element => {
           </div>
           <div className="form-group">
             <label htmlFor="image">Image</label>
-            <input type="file" value={newCard.image} onChange={onChangeFile} />
+            <label htmlFor="file-upload" className="custom-file-upload">
+              <i className="fa fa-cloud-upload"></i>
+              {newCard.image ? newCard.image : "Click to upload image"}
+              <input
+                id="file-upload"
+                type="file"
+                value={newCard.image}
+                onChange={onChangeFile}
+              />
+            </label>
           </div>
           <div className="form-group">
             <Button
