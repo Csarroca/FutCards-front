@@ -6,9 +6,9 @@ import {
 } from "../../features/cards/cardsSlice";
 import mockedCard from "../../test-utils/mocks/mockCard";
 import mockUseDispatch from "../../test-utils/mocks/mockUseAppDispatch";
-import { renderHook } from "../../test-utils/render/customRender";
 import useApi from "./useAPI";
 import { toast } from "react-toastify";
+import { renderHook } from "../../test-utils/render/customRender";
 
 jest.mock("react-toastify");
 
@@ -43,6 +43,8 @@ describe("Given a deleteCard function returned by useAPI function", () => {
 
   describe("When it's called with a valid id", () => {
     test("Then it should dispatch the deleteCard action with the recived id and call succesModal function", async () => {
+      jest.clearAllMocks();
+
       await act(async () => {
         await deleteCard(mockedCard.id);
       });
@@ -81,6 +83,36 @@ describe("Given a deleteCard function returned by useAPI function", () => {
           position: toast.POSITION.TOP_CENTER,
         });
       });
+    });
+  });
+});
+
+describe("Given a getCardById function", () => {
+  describe("When it's invoke with an especific id", () => {
+    xtest("Then it should return a 'FutCard' with that id", async () => {
+      const {
+        result: {
+          current: { getCardById },
+        },
+      } = renderHook(useApi);
+
+      const card = await getCardById(mockedCard.id);
+
+      await expect(card).toBe(mockedCard);
+    });
+  });
+
+  describe("When it's invoke with a wrong ID", () => {
+    test("Then it should return a 'FutCard' with that id", async () => {
+      const {
+        result: {
+          current: { getCardById },
+        },
+      } = renderHook(useApi);
+
+      const card = await getCardById(mockedCard.id);
+
+      await expect(card).not.toBe(mockedCard);
     });
   });
 });
