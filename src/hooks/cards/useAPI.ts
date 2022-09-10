@@ -6,6 +6,7 @@ import {
   createCardActionCreator,
   deleteCardActionCreator,
   loadAllCardsActionCreator,
+  updateCardActionCreator,
 } from "../../features/cards/cardsSlice";
 import { Card, ProtoCard } from "../../features/cards/models/card";
 import { toast } from "react-toastify";
@@ -89,17 +90,21 @@ const useApi = () => {
   }, []);
 
   const updateCard = async (formData: FormData, id: string) => {
-    let response;
     const token = localStorage.getItem("token");
     try {
-      response = await axios.put(`${url}/cards/updateCard/${id}`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const { data } = await axios.put(
+        `${url}/cards/updateCard/${id}`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      dispatch(updateCardActionCreator(data));
       navigate("/cards");
-      return response.data;
     } catch (error) {
       errorModal("Can not update  this card");
     }

@@ -31,6 +31,8 @@ export const { deleteCard: deleteCardActionCreator } = cardsSlice.actions;
 
 export const { createCard: createCardActionCreator } = cardsSlice.actions;
 
+export const { updateCard: updateCardActionCreator } = cardsSlice.actions;
+
 export const cardsReducer = cardsSlice.reducer;
 
 export default cardsReducer;
