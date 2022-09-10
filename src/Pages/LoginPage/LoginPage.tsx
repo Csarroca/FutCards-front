@@ -9,9 +9,10 @@ const LoginPage = (): JSX.Element => {
         <h2 className="title">Sign in</h2>
         <LoginForm />
         <span className="login-text">
-          Don't have and account? Register
+          Don't have and account?
           <Link to={"/register"} className="login-link">
-            here
+            {" "}
+            Register
           </Link>
         </span>
       </div>

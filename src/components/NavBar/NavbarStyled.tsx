@@ -12,10 +12,12 @@ const NavbarStyled = styled.div`
     justify-content: center;
 
     &-list {
+      align-items: center;
       display: flex;
       list-style: none;
       margin: 0;
       padding: 0;
+      text-align: center;
 
       &__link {
         padding: 1rem;

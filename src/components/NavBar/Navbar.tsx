@@ -13,9 +13,7 @@ const Navbar = () => {
     logout();
   };
 
-  const isRendered =
-    pathname === "/my-team" || pathname === "/cards" || pathname === "/create";
-
+  const isRendered = pathname !== "/register" && pathname !== "/login";
   return (
     <>
       {isRendered && (

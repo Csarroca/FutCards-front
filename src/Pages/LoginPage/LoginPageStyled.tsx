@@ -24,8 +24,12 @@ const LoginPageStyled = styled.div`
 
   .login-link {
     text-decoration: none;
+    color: ${styles.colors.globalDarkGreen};
   }
 
+  .login-link:focus {
+    color: ${styles.colors.globalGreen};
+  }
   @media (min-width: 1000px) {
     max-width: 500px;
   }
