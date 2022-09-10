@@ -89,12 +89,12 @@ const useApi = () => {
     }
   }, []);
 
-  const updateCard = async (formData: FormData, id: string) => {
+  const updateCard = async (updatedCard: ProtoCard, id: string) => {
     const token = localStorage.getItem("token");
     try {
       const { data } = await axios.put(
         `${url}/cards/updateCard/${id}`,
-        formData,
+        updatedCard,
         {
           headers: {
             "Content-Type": "multipart/form-data",
