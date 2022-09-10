@@ -5,11 +5,11 @@ import CreateCardPage from "./CreateCardPage";
 describe("Given a CardsPage component", () => {
   describe("When it is instanciated", () => {
     test("Then it should show a heading with 'CardsPage' as a text", () => {
-      const pageTitle = "CreateCardPage";
+      const buttonText = "CREATE";
 
       render(<CreateCardPage />, { wrapper: Wrapper });
 
-      const headingName = screen.getByRole("heading", { name: pageTitle });
+      const headingName = screen.getByRole("button", { name: buttonText });
 
       expect(headingName).toBeInTheDocument();
     });
