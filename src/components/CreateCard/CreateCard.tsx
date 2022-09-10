@@ -3,6 +3,7 @@ import { ProtoCard } from "../../features/cards/models/card";
 import useApi from "../../hooks/cards/useAPI";
 import Button from "../Button/Button";
 import { ToastContainer } from "react-toastify";
+import CreateCardStyled from "./CreateCardStyled";
 
 let formData = new FormData();
 
@@ -48,188 +49,189 @@ const CreateCard = (): JSX.Element => {
   };
 
   return (
-    <>
-      <ToastContainer />
+    <CreateCardStyled>
+      <>
+        <ToastContainer />
+        <form
+          className="create-card"
+          autoComplete="off"
+          noValidate
+          onSubmit={handleCreate}
+        >
+          <div className="form-group">
+            <label htmlFor="name">Name</label>
+            <input type="text" id="name" onChange={onChangeField} required />
+          </div>
 
-      <form
-        className="create-card"
-        autoComplete="off"
-        noValidate
-        onSubmit={handleCreate}
-      >
-        <div className="form-group">
-          <label htmlFor="name">Name: </label>
-          <input type="text" id="name" onChange={onChangeField} required />
-        </div>
+          <div className="form-group">
+            <label htmlFor="nacionallity">Nacionallity</label>
+            <input
+              id="nacionallity"
+              type="text"
+              value={newCard.nacionallity}
+              onChange={onChangeField}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="team">Team</label>
+            <input
+              type="text"
+              id="team"
+              value={newCard.team}
+              onChange={onChangeField}
+              required
+            />
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="nacionallity">Nacionallity: </label>
-          <input
-            id="nacionallity"
-            type="text"
-            value={newCard.nacionallity}
-            onChange={onChangeField}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="team">team: </label>
-          <input
-            type="text"
-            id="team"
-            value={newCard.team}
-            onChange={onChangeField}
-            required
-          />
-        </div>
+          <div className="form-group">
+            <label htmlFor="pace">Pace</label>
+            <input
+              min="0"
+              max="99"
+              type="range"
+              id="pace"
+              value={newCard.pace}
+              onChange={onChangeField}
+              required
+            />
+            <output id="pace">{newCard.pace}</output>
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="pace">Pace: </label>
-          <input
-            min="0"
-            max="99"
-            type="range"
-            id="pace"
-            value={newCard.pace}
-            onChange={onChangeField}
-            required
-          />
-          <output id="pace">{newCard.pace} </output>
-        </div>
+          <div className="form-group">
+            <label htmlFor="dribbling">Dribbling</label>
+            <input
+              min="0"
+              max="99"
+              type="range"
+              id="dribbling"
+              value={newCard.dribbling}
+              onChange={onChangeField}
+              required
+            />
+            <output id="dribbling">{newCard.dribbling}</output>
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="dribbling">Dribbling: </label>
-          <input
-            min="0"
-            max="99"
-            type="range"
-            id="dribbling"
-            value={newCard.dribbling}
-            onChange={onChangeField}
-            required
-          />
-          <output id="pace">{newCard.dribbling} </output>
-        </div>
+          <div className="form-group">
+            <label htmlFor="shooting">Shooting</label>
+            <input
+              min="0"
+              max="99"
+              type="range"
+              id="shooting"
+              value={newCard.shooting}
+              onChange={onChangeField}
+              required
+            />
+            <output id="shooting">{newCard.shooting}</output>
+          </div>
+          <div className="form-group">
+            <label htmlFor="defense">Defense</label>
+            <input
+              min="0"
+              max="99"
+              type="range"
+              id="defense"
+              value={newCard.defense}
+              onChange={onChangeField}
+              required
+            />
+            <output id="defense">{newCard.defense}</output>
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="shooting">Shooting: </label>
-          <input
-            min="0"
-            max="99"
-            type="range"
-            id="shooting"
-            value={newCard.shooting}
-            onChange={onChangeField}
-            required
-          />
-          <output id="pace">{newCard.shooting} </output>
-        </div>
-        <div className="form-group">
-          <label htmlFor="defense">Defense: </label>
-          <input
-            min="0"
-            max="99"
-            type="range"
-            id="defense"
-            value={newCard.defense}
-            onChange={onChangeField}
-            required
-          />
-          <output id="pace">{newCard.defense} </output>
-        </div>
+          <div className="form-group">
+            <label htmlFor="passing">Passing</label>
+            <input
+              min="0"
+              max="99"
+              type="range"
+              id="passing"
+              value={newCard.passing}
+              onChange={onChangeField}
+              required
+            />
+            <output id="passing">{newCard.passing}</output>
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="passing">Passing: </label>
-          <input
-            min="0"
-            max="99"
-            type="range"
-            id="passing"
-            value={newCard.passing}
-            onChange={onChangeField}
-            required
-          />
-          <output id="pace">{newCard.passing} </output>
-        </div>
+          <div className="form-group">
+            <label htmlFor="physicall">Physical</label>
+            <input
+              min="0"
+              max="99"
+              type="range"
+              id="physicall"
+              value={newCard.physicall}
+              onChange={onChangeField}
+              required
+            />
+            <output id="physicall">{newCard.physicall}</output>
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="physicall">Physical: </label>
-          <input
-            min="0"
-            max="99"
-            type="range"
-            id="physicall"
-            value={newCard.physicall}
-            onChange={onChangeField}
-            required
-          />
-          <output id="pace">{newCard.physicall} </output>
-        </div>
+          <div className="form-group">
+            <label htmlFor="height">Height</label>
+            <input
+              min="0"
+              max="220"
+              type="range"
+              id="height"
+              value={newCard.height}
+              onChange={onChangeField}
+              required
+            />
+            <output id="height">{newCard.height}</output>
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="height">Height: cm</label>
-          <input
-            min="0"
-            max="220"
-            type="range"
-            id="height"
-            value={newCard.height}
-            onChange={onChangeField}
-            required
-          />
-          <output id="pace">{newCard.height} </output>
-        </div>
+          <div className="form-group">
+            <label htmlFor="age">Age</label>
+            <input
+              min="0"
+              max="99"
+              type="range"
+              id="age"
+              value={newCard.age}
+              onChange={onChangeField}
+              required
+            />
+            <output id="age">{newCard.age}</output>
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="age">Age: </label>
-          <input
-            min="0"
-            max="99"
-            type="range"
-            id="age"
-            value={newCard.age}
-            onChange={onChangeField}
-            required
-          />
-          <output id="pace">{newCard.age} </output>
-        </div>
+          <div className="form-group">
+            <label htmlFor="foot">Foot</label>
+            <input
+              type="text"
+              id="foot"
+              value={newCard.foot}
+              onChange={onChangeField}
+              required
+            />
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="foot">Foot: </label>
-          <input
-            type="text"
-            id="foot"
-            value={newCard.foot}
-            onChange={onChangeField}
-            required
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="position">Position: </label>
-          <input
-            type="text"
-            id="position"
-            value={newCard.position}
-            onChange={onChangeField}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="image">Image: </label>
-          <input type="file" value={newCard.image} onChange={onChangeFile} />
-        </div>
-        <div className="form-group">
-          <Button
-            isDisabled={false}
-            type={"submit"}
-            className="greenButton"
-            actionOnclick={() => {}}
-            buttonText={"CREATE"}
-          ></Button>
-        </div>
-      </form>
-    </>
+          <div className="form-group">
+            <label htmlFor="position">Position</label>
+            <input
+              type="text"
+              id="position"
+              value={newCard.position}
+              onChange={onChangeField}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="image">Image</label>
+            <input type="file" value={newCard.image} onChange={onChangeFile} />
+          </div>
+          <div className="form-group">
+            <Button
+              isDisabled={false}
+              type={"submit"}
+              className="greenButton"
+              actionOnclick={() => {}}
+              buttonText={"CREATE"}
+            ></Button>
+          </div>
+        </form>
+      </>
+    </CreateCardStyled>
   );
 };
 

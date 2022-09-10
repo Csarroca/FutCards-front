@@ -13,7 +13,7 @@ const Navbar = () => {
     logout();
   };
 
-  const isRendered = pathname !== ("/login" || "/register");
+  const isRendered = pathname !== "/register" && pathname !== "/login";
   return (
     <>
       {isRendered && (
