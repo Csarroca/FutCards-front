@@ -77,8 +77,11 @@ const useApi = () => {
   };
   const getCardById = useCallback(async (cardId: string) => {
     try {
-      const { data } = await axios.get(`${url}/cards/${cardId}`);
-      return data;
+      const {
+        data: { card },
+      } = await axios.get(`http://localhost:4100/cards/${cardId}`);
+      console.log(card);
+      return card;
     } catch (error) {
       errorModal("Can not show details from this card");
     }

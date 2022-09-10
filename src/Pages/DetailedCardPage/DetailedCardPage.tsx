@@ -30,7 +30,7 @@ const DetailedCardPage = (): JSX.Element => {
 
   useEffect(() => {
     (async () => {
-      const card = await getCardById(id!);
+      const card: Card = await getCardById(id!);
       setCard(card);
     })();
   }, [getCardById, id]);

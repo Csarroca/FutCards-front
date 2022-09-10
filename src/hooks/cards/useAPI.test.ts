@@ -13,11 +13,6 @@ import { renderHook } from "../../test-utils/render/customRender";
 
 jest.mock("react-toastify");
 
-jest.mock("../../hooks/cards/useAPI", () => ({
-  ...jest.requireActual("../../hooks/cards/useAPI"),
-  useAppDispatch: () => mockUseDispatch,
-}));
-
 describe("Given a getAllCards function returned by a useAPI function", () => {
   describe("When it's called", () => {
     const {
@@ -95,16 +90,30 @@ describe("Given a deleteCard function returned by useAPI function", () => {
 
 describe("Given a getCardById function", () => {
   describe("When it's invoke with an especific id", () => {
+    test.only("Then it should return a 'FutCard' with that id", async () => {
+      const {
+        result: {
+          current: { getCardById },
+        },
+      } = renderHook(useApi);
+
+      const card = await getCardById(mockedCard.id);
+
+      await expect(card).toBe(mockedCard);
+    });
+  });
+
+  describe("When it's invoke with a wrong ID", () => {
     test("Then it should return a 'FutCard' with that id", async () => {
       const {
         result: {
           current: { getCardById },
         },
-      } = renderHook(useApi, { wrapper: Wrapper });
+      } = renderHook(useApi);
 
-      const crypto = await getCardById(mockedCard.id);
+      const card = await getCardById(mockedCard.id);
 
-      await expect(crypto).toStrictEqual(mockedCard);
+      await expect(card).not.toBe(mockedCard);
     });
   });
 });

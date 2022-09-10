@@ -36,7 +36,7 @@ describe("Given a DetailedCardPage component", () => {
       expect(button2).toBeInTheDocument();
     });
 
-    test.only("And it should call the useState function", () => {
+    test("And it should call the useState function", () => {
       let mockUseState;
       act(() => {
         mockUseState = jest.spyOn(React, "useState");
