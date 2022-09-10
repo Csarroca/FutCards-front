@@ -79,7 +79,6 @@ const useApi = () => {
       const {
         data: { card },
       } = await axios.get(`http://localhost:4100/cards/${cardId}`);
-      console.log(card);
       return card;
     } catch (error) {
       errorModal("Can not show details from this card");
