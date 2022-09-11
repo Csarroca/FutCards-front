@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { Card } from "../../features/cards/models/card";
 import Button from "../Button/Button";
 import DetailedCardStayled from "./DetailedCardStyled";
@@ -92,17 +93,23 @@ const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
         </ul>
 
         <div className="buttons-container">
+          <NavLink
+            to={`/cards/update/${card.id}`}
+            className="navbar-list__link"
+          >
+            <Button
+              isDisabled={false}
+              type={"button"}
+              className="greenButton"
+              actionOnclick={() => {}}
+              buttonText={"EDIT"}
+            ></Button>
+          </NavLink>
+
           <Button
             isDisabled={false}
             type={"submit"}
-            className="greenButton"
-            actionOnclick={() => {}}
-            buttonText={"EDIT"}
-          ></Button>
-          <Button
-            isDisabled={false}
-            type={"submit"}
-            className="greenButton"
+            className="redButton"
             actionOnclick={() => {}}
             buttonText={"DELETE"}
           ></Button>

@@ -57,8 +57,7 @@ function App() {
         <Route path="/my-team" element={<MyTeamPage />} />
         <Route path="/cards/details/:id" element={<DetailedCardPage />} />
         <Route path="/create" element={<CreateCardPage />} />
-        <Route path="/update" element={<UpdatePage />} />
-
+        <Route path="/cards/update/:id" element={<UpdatePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </AppStyled>
