@@ -1,5 +1,4 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { useAppSelector } from "../../app/store/hooks";
 import { Card } from "../../features/cards/models/card";
 import useApi from "../../hooks/cards/useAPI";
 import Button from "../Button/Button";
@@ -16,7 +15,6 @@ const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
   });
 
   const { deleteCard } = useApi();
-  const { id } = useAppSelector((state) => state.users);
 
   const handleDelete = () => {
     deleteCard(card.id);
@@ -104,30 +102,28 @@ const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
           </div>
         </ul>
 
-        {card.owner === id && (
-          <div className="buttons-container">
-            <NavLink
-              to={`/cards/update/${card.id}`}
-              className="navbar-list__link"
-            >
-              <Button
-                isDisabled={false}
-                type={"button"}
-                className="greenButton"
-                actionOnclick={() => {}}
-                buttonText={"EDIT"}
-              ></Button>
-            </NavLink>
-
+        <div className="buttons-container">
+          <NavLink
+            to={`/cards/update/${card.id}`}
+            className="navbar-list__link"
+          >
             <Button
               isDisabled={false}
               type={"button"}
-              className="redButton"
-              actionOnclick={() => handleDelete()}
-              buttonText={"DELETE"}
+              className="greenButton"
+              actionOnclick={() => {}}
+              buttonText={"EDIT"}
             ></Button>
-          </div>
-        )}
+          </NavLink>
+
+          <Button
+            isDisabled={false}
+            type={"button"}
+            className="redButton"
+            actionOnclick={() => handleDelete()}
+            buttonText={"DELETE"}
+          ></Button>
+        </div>
       </div>
     </DetailedCardStayled>
   );

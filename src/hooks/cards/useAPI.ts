@@ -62,7 +62,7 @@ const useApi = () => {
     [dispatch, token]
   );
 
-  const createCard = async (newCard: ProtoCard) => {
+  const createCard = async (newCard: FormData) => {
     try {
       const { data } = await axios.post(`${url}/cards/create`, newCard, {
         headers: {
@@ -89,7 +89,7 @@ const useApi = () => {
     }
   }, []);
 
-  const updateCard = async (updatedCard: ProtoCard, id: string) => {
+  const updateCard = async (updatedCard: FormData, id: string) => {
     const token = localStorage.getItem("token");
     try {
       const { data } = await axios.put(

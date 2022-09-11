@@ -40,7 +40,8 @@ const UpdateCard = (): JSX.Element => {
 
   const handleUpdate = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    updateCard(newCard, id as string);
+    formData.append("card", JSON.stringify({ ...newCard }));
+    updateCard(formData, id as string);
 
     setNewCard(initialCard);
   };
