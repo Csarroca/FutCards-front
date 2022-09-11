@@ -13,16 +13,13 @@ const FutCardStyled = styled.div`
     clip-path: url("#svgPath");
     display: block;
     opacity: 1;
-
     .card-inner {
       position: absolute;
       top: 0;
       left: 0;
       background: ${styles.colors.cardColor2};
-
       height: 100%;
       width: 100%;
-
       .card-top {
         position: absolute;
         width: 100%;
@@ -30,59 +27,42 @@ const FutCardStyled = styled.div`
         background: ${styles.colors.cardColor1};
         overflow: hidden;
         background: linear-gradient(
-          135deg,
-          ${styles.colors.cardColor2} 0%,
-          darken(${styles.colors.cardColor1}, 10%) 100%
+          ${styles.colors.cardColor3},
+          ${styles.colors.cardColor2}
         );
-
-        .backfont {
-          position: absolute;
-          bottom: -22px;
-          line-height: 1;
-          font-size: 118px;
-          left: -8px;
-          letter-spacing: -5px;
-          opacity: 1;
-          font-weight: 700;
-          font-style: italic;
-        }
         .image {
           position: absolute;
-          right: 0;
-          bottom: 0;
+          right: 21px;
+          bottom: 4px;
           z-index: 2;
-          height: 75%;
-          width: 70%;
-          object-fit: scale-down;
+          height: 173px;
+          width: 164px;
+          object-fit: cover;
           background-position: bottom center;
           background-repeat: no-repeat;
           background-size: contain;
           opacity: 1;
+          border-radius: 10px;
         }
-
         .info {
           position: absolute;
           left: 0;
           bottom: 0;
           z-index: 3;
-          height: 75%;
           width: 30%;
           box-sizing: border-box;
           padding: 0 20px;
           text-align: center;
           text-transform: uppercase;
-
           div {
             position: relative;
             line-height: 1;
             letter-spacing: -1px;
             font-size: 20px;
             opacity: 1;
-
             &.value {
-              font-size: 40px;
+              font-size: 30px;
             }
-
             &.position,
             &.country {
               padding-bottom: 5px;
@@ -91,7 +71,6 @@ const FutCardStyled = styled.div`
               border-bottom: 2px solid
                 transparentize(${styles.colors.cardColor1}, 0.1);
             }
-
             &.country,
             &.club {
               position: relative;
@@ -99,7 +78,6 @@ const FutCardStyled = styled.div`
               width: 40px;
               height: 25px;
               margin: 5px auto;
-
               img {
                 position: relative;
                 height: 100%;
@@ -107,10 +85,8 @@ const FutCardStyled = styled.div`
                 background-position: center;
                 background-size: cover;
               }
-
               &.club {
                 height: 60px;
-
                 div {
                   background-size: contain;
                   background-position: top center;
@@ -121,19 +97,17 @@ const FutCardStyled = styled.div`
           }
         }
       }
-
       .card-bottom {
+        font-size: 20px;
         position: absolute;
         overflow: hidden;
         bottom: 0;
         width: 100%;
         height: 46%;
         background: ${styles.colors.cardColor2};
-
         background: linear-gradient(
-          135deg,
-          ${styles.colors.cardColor2} 0%,
-          darken(${styles.colors.cardColor1}, 10%) 100%
+          ${styles.colors.cardColor2},
+          ${styles.colors.cardColor3}
         );
         &:before {
           content: "";
@@ -145,7 +119,6 @@ const FutCardStyled = styled.div`
         }
         .name {
           text-align: center;
-          font-size: 28px;
           text-transform: uppercase;
           font-weight: 700;
           opacity: 1;
@@ -158,6 +131,7 @@ const FutCardStyled = styled.div`
           padding-top: 10px;
           border-top: 4px solid ${styles.colors.cardColor2};
           display: flex;
+          width: 70%;
           &-list {
             gap: 0;
           }
@@ -172,7 +146,6 @@ const FutCardStyled = styled.div`
             width: 25%;
             background: ${styles.colors.cardColor2};
           }
-
           &:before {
             content: "";
             position: absolute;
@@ -184,26 +157,22 @@ const FutCardStyled = styled.div`
             width: 4px;
             background: ${styles.colors.cardColor2};
           }
-
           div {
             width: 49%;
             vertical-align: top;
             display: inline-block;
             text-transform: uppercase;
-            font-size: 23px;
+            font-size: 20px;
             &:last-child {
               ul {
                 margin-left: 24px;
               }
             }
           }
-
           ul {
-            list-style: none;
             margin: 0;
             padding: 0;
             width: 100%;
-
             li {
               margin: 0;
               position: relative;
@@ -211,11 +180,9 @@ const FutCardStyled = styled.div`
               display: block;
               margin-bottom: 5px;
               opacity: 1;
-
               span {
                 position: relative;
                 display: inline-block;
-
                 &:first-child {
                   font-weight: 700;
                   width: 30px;
@@ -228,22 +195,20 @@ const FutCardStyled = styled.div`
       }
     }
   }
-
   .card-container {
     position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
-
   .card-delete {
-    color: ${styles.colors.cardColor3};
+    color: ${styles.colors.cardColor2};
     position: absolute;
     z-index: 4;
     height: 15%;
     width: 25%;
     box-sizing: border-box;
-    padding: 0 20px;
+    padding: 0 30px;
     cursor: pointer;
   }
 `;
