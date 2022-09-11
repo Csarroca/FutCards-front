@@ -1,4 +1,5 @@
 import { Card } from "../../features/cards/models/card";
+import useApi from "../../hooks/cards/useAPI";
 import Button from "../Button/Button";
 
 interface DetailedCardProps {
@@ -6,6 +7,10 @@ interface DetailedCardProps {
 }
 
 const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
+  const { deleteCard } = useApi();
+  const handleDelete = (event: React.MouseEvent<SVGElement, MouseEvent>) => {
+    deleteCard(card.id);
+  };
   return (
     <>
       <div className="details-group">
