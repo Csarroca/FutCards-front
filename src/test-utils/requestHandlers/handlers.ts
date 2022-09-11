@@ -80,7 +80,7 @@ export const handlers = [
   ),
 
   rest.get(
-    `${process.env.REACT_APP_API_URL}cards/${mockedCard.id}`,
+    `${process.env.REACT_APP_API_URL}/cards/${mockedCard.id}`,
     (req, res, ctx) => {
       return res(
         ctx.status(200),
@@ -92,7 +92,7 @@ export const handlers = [
   ),
 
   rest.get(
-    `${process.env.REACT_APP_API_URL}cards/wrongId`,
+    `${process.env.REACT_APP_API_URL}/cards/wrongId`,
     (_req, res, ctx) => {
       return res(
         ctx.status(404),

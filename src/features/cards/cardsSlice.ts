@@ -17,6 +17,11 @@ export const cardsSlice = createSlice({
       ...previousCards,
       action.payload,
     ],
+    updateCard: (previousState, action: PayloadAction<Card>) => {
+      return previousState.map((card) =>
+        card.id === action.payload.id ? action.payload : card
+      );
+    },
   },
 });
 
@@ -25,6 +30,8 @@ export const { loadAllCards: loadAllCardsActionCreator } = cardsSlice.actions;
 export const { deleteCard: deleteCardActionCreator } = cardsSlice.actions;
 
 export const { createCard: createCardActionCreator } = cardsSlice.actions;
+
+export const { updateCard: updateCardActionCreator } = cardsSlice.actions;
 
 export const cardsReducer = cardsSlice.reducer;
 
