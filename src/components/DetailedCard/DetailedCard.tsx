@@ -1,5 +1,7 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useAppSelector } from "../../app/store/hooks";
 import { Card } from "../../features/cards/models/card";
+import useApi from "../../hooks/cards/useAPI";
 import Button from "../Button/Button";
 import DetailedCardStayled from "./DetailedCardStyled";
 
@@ -8,9 +10,19 @@ interface DetailedCardProps {
 }
 
 const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
+  const navigate = useNavigate();
   const imageUrl = (url: string) => ({
     backgroundImage: `url(${url})`,
   });
+
+  const { deleteCard } = useApi();
+  const { id } = useAppSelector((state) => state.users);
+
+  const handleDelete = () => {
+    deleteCard(card.id);
+
+    navigate("/cards");
+  };
 
   return (
     <DetailedCardStayled>
@@ -92,28 +104,30 @@ const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
           </div>
         </ul>
 
-        <div className="buttons-container">
-          <NavLink
-            to={`/cards/update/${card.id}`}
-            className="navbar-list__link"
-          >
+        {card.owner === id && (
+          <div className="buttons-container">
+            <NavLink
+              to={`/cards/update/${card.id}`}
+              className="navbar-list__link"
+            >
+              <Button
+                isDisabled={false}
+                type={"button"}
+                className="greenButton"
+                actionOnclick={() => {}}
+                buttonText={"EDIT"}
+              ></Button>
+            </NavLink>
+
             <Button
               isDisabled={false}
               type={"button"}
-              className="greenButton"
-              actionOnclick={() => {}}
-              buttonText={"EDIT"}
+              className="redButton"
+              actionOnclick={() => handleDelete()}
+              buttonText={"DELETE"}
             ></Button>
-          </NavLink>
-
-          <Button
-            isDisabled={false}
-            type={"submit"}
-            className="redButton"
-            actionOnclick={() => {}}
-            buttonText={"DELETE"}
-          ></Button>
-        </div>
+          </div>
+        )}
       </div>
     </DetailedCardStayled>
   );

@@ -4,10 +4,12 @@ import useApi from "../../hooks/cards/useAPI";
 import Button from "../Button/Button";
 import { ToastContainer } from "react-toastify";
 import CreateCardStyled from "./CreateCardStyled";
+import { useNavigate } from "react-router-dom";
 
 let formData = new FormData();
 
 const CreateCard = (): JSX.Element => {
+  const navigate = useNavigate();
   const initialCard: ProtoCard = {
     name: "",
     image: "",
@@ -41,6 +43,7 @@ const CreateCard = (): JSX.Element => {
     createCard(newCard);
 
     setNewCard(initialCard);
+    navigate("/cards");
   };
 
   const onChangeFile = (event: React.ChangeEvent<HTMLInputElement>) => {
