@@ -4,10 +4,13 @@ import useApi from "../../hooks/cards/useAPI";
 import Button from "../Button/Button";
 import { ToastContainer } from "react-toastify";
 import CreateCardStyled from "./CreateCardStyled";
+import { useAppSelector } from "../../app/store/hooks";
 
 let formData = new FormData();
 
 const CreateCard = (): JSX.Element => {
+  const { id } = useAppSelector((state) => state.users);
+
   const initialCard: ProtoCard = {
     name: "",
     image: "",
@@ -24,6 +27,7 @@ const CreateCard = (): JSX.Element => {
     height: 0,
     age: 0,
     foot: "",
+    owner: "",
   };
 
   const { createCard } = useApi();
@@ -38,7 +42,7 @@ const CreateCard = (): JSX.Element => {
 
   const handleCreate = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    formData.append("card", JSON.stringify(newCard));
+    formData.append("card", JSON.stringify({ ...newCard, owner: id }));
     createCard(formData);
 
     setNewCard(initialCard);

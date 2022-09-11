@@ -102,7 +102,6 @@ const CreateCardStyled = styled.div`
   }
 
   input[type="file"] {
-    display: none;
   }
 
   @media (min-width: 1000px) {
