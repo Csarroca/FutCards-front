@@ -32,11 +32,11 @@ const FutCardStyled = styled.div`
         );
         .image {
           position: absolute;
-          right: 21px;
-          bottom: 4px;
+          right: 42px;
+          bottom: 26px;
           z-index: 2;
-          height: 173px;
-          width: 164px;
+          height: 138px;
+          width: 100px;
           object-fit: cover;
           background-position: bottom center;
           background-repeat: no-repeat;
