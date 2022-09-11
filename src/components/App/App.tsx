@@ -18,6 +18,7 @@ import { User } from "../../features/users/models/User";
 import { loginUsers } from "../../features/users/UserSlice";
 import { PayloadAction } from "@reduxjs/toolkit";
 import DetailedCardPage from "../../Pages/DetailedCardPage/DetailedCardPage";
+import UpdatePage from "../../Pages/UpdatePage/UpdatePage";
 
 function App() {
   const token = localStorage.getItem("token");
@@ -56,6 +57,8 @@ function App() {
         <Route path="/my-team" element={<MyTeamPage />} />
         <Route path="/cards/details/:id" element={<DetailedCardPage />} />
         <Route path="/create" element={<CreateCardPage />} />
+        <Route path="/update" element={<UpdatePage />} />
+
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </AppStyled>

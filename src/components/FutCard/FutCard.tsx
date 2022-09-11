@@ -50,7 +50,6 @@ const FutCard = ({ card }: FutCardProps): JSX.Element => {
               </div>
 
               <img className="image" src={card.image} alt="player avatar"></img>
-              <div className="backfont"></div>
             </div>
             <div className="card-bottom">
               <div className="name">{card.name}</div>
