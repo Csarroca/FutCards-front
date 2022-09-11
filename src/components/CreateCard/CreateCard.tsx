@@ -38,7 +38,8 @@ const CreateCard = (): JSX.Element => {
 
   const handleCreate = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    createCard(newCard);
+    formData.append("card", JSON.stringify(newCard));
+    createCard(formData);
 
     setNewCard(initialCard);
   };

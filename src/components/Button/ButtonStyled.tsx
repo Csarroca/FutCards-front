@@ -15,6 +15,10 @@ const ButtonStyled = styled.button`
   &.greenButton {
     background-color: ${styles.colors.globalGreen};
   }
+
+  &.redButton {
+    background-color: ${styles.colors.globalRed};
+  }
 `;
 
 export default ButtonStyled;

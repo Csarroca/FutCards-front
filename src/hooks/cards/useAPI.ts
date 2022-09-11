@@ -8,7 +8,7 @@ import {
   loadAllCardsActionCreator,
   updateCardActionCreator,
 } from "../../features/cards/cardsSlice";
-import { Card, ProtoCard } from "../../features/cards/models/card";
+import { Card } from "../../features/cards/models/card";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
@@ -62,7 +62,7 @@ const useApi = () => {
     [dispatch, token]
   );
 
-  const createCard = async (newCard: ProtoCard) => {
+  const createCard = async (newCard: FormData) => {
     try {
       const { data } = await axios.post(`${url}/cards/create`, newCard, {
         headers: {
@@ -89,7 +89,7 @@ const useApi = () => {
     }
   }, []);
 
-  const updateCard = async (updatedCard: ProtoCard, id: string) => {
+  const updateCard = async (updatedCard: FormData, id: string) => {
     const token = localStorage.getItem("token");
     try {
       const { data } = await axios.put(

@@ -1,4 +1,6 @@
+import { NavLink, useNavigate } from "react-router-dom";
 import { Card } from "../../features/cards/models/card";
+import useApi from "../../hooks/cards/useAPI";
 import Button from "../Button/Button";
 import DetailedCardStayled from "./DetailedCardStyled";
 
@@ -7,9 +9,18 @@ interface DetailedCardProps {
 }
 
 const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
+  const navigate = useNavigate();
   const imageUrl = (url: string) => ({
     backgroundImage: `url(${url})`,
   });
+
+  const { deleteCard } = useApi();
+
+  const handleDelete = () => {
+    deleteCard(card.id);
+
+    navigate("/cards");
+  };
 
   return (
     <DetailedCardStayled>
@@ -92,18 +103,24 @@ const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
         </ul>
 
         <div className="buttons-container">
+          <NavLink
+            to={`/cards/update/${card.id}`}
+            className="navbar-list__link"
+          >
+            <Button
+              isDisabled={false}
+              type={"button"}
+              className="greenButton"
+              actionOnclick={() => {}}
+              buttonText={"EDIT"}
+            ></Button>
+          </NavLink>
+
           <Button
             isDisabled={false}
-            type={"submit"}
-            className="greenButton"
-            actionOnclick={() => {}}
-            buttonText={"EDIT"}
-          ></Button>
-          <Button
-            isDisabled={false}
-            type={"submit"}
-            className="greenButton"
-            actionOnclick={() => {}}
+            type={"button"}
+            className="redButton"
+            actionOnclick={() => handleDelete()}
             buttonText={"DELETE"}
           ></Button>
         </div>

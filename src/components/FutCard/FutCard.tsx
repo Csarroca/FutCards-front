@@ -39,7 +39,6 @@ const FutCard = ({ card }: FutCardProps): JSX.Element => {
           <div className="card-inner">
             <div className="card-top">
               <div className="info">
-                <div className="value">{card.overall}</div>
                 <div className="position">{card.position}</div>
                 <div className="country">
                   <img src={card.nacionallity} alt="country flag" />

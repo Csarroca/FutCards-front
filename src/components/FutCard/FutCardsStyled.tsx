@@ -202,13 +202,13 @@ const FutCardStyled = styled.div`
     justify-content: center;
   }
   .card-delete {
-    color: ${styles.colors.cardColor2};
+    color: #fdeaa7;
     position: absolute;
     z-index: 4;
-    height: 15%;
-    width: 25%;
+    height: 26px;
+    width: 25px;
     box-sizing: border-box;
-    padding: 0 30px;
+    padding: 0px 2px;
     cursor: pointer;
   }
 `;
