@@ -8,7 +8,7 @@ import {
   loadAllCardsActionCreator,
   updateCardActionCreator,
 } from "../../features/cards/cardsSlice";
-import { Card, ProtoCard } from "../../features/cards/models/card";
+import { Card } from "../../features/cards/models/card";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
