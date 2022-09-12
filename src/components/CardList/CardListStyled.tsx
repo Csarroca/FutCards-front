@@ -8,7 +8,7 @@ const CardListStyled = styled.div`
     gap: 35px;
     justify-content: space-between;
     padding: 20px;
-    @media (min-width: 1000px) {
+    @media (min-width: 800px) {
       flex-direction: row;
       flex-wrap: wrap;
     }

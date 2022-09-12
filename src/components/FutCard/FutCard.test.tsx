@@ -26,7 +26,7 @@ describe("Given a FutCard component", () => {
       const renderedImages = [
         screen.getByAltText("country flag"),
         screen.getByAltText("club of football"),
-        screen.getByAltText("player avatar"),
+        screen.getByAltText(`${mockedCard.name} avatar`),
       ];
 
       expect(images).toHaveLength(expectedNumberOfImages);

@@ -38,7 +38,7 @@ const LoginForm = (): JSX.Element => {
         <label htmlFor="userName">Username</label>
 
         <input
-          className="Login__input"
+          className="login__input"
           id="userName"
           type="text"
           name="userName"
@@ -51,7 +51,7 @@ const LoginForm = (): JSX.Element => {
         <label htmlFor="password">Password</label>
 
         <input
-          className="Login__input"
+          className="login__input"
           id="password"
           type="password"
           name="password"
