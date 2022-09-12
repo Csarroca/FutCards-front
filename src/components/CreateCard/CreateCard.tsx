@@ -40,10 +40,10 @@ const CreateCard = (): JSX.Element => {
     });
   };
 
-  const handleCreate = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleCreate = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     formData.append("card", JSON.stringify({ ...newCard, owner: id }));
-    createCard(formData);
+    await createCard(formData);
 
     setNewCard(initialCard);
   };
