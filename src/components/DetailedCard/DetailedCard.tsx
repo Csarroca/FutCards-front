@@ -29,7 +29,7 @@ const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
       <div className="details-container">
         <ul className="details-list">
           <div className="details-top">
-            <div className="details-info">
+            <div className="details-info generic">
               <li key="name" className="details-group">
                 <span className="details-group-title">NAME</span>
                 <span className="details-group-content">
@@ -47,7 +47,7 @@ const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
                 <span className="details-group-content">{card.overall}</span>
               </li>
             </div>
-            <div className="details-info">
+            <div className="details-info images">
               <li key="nacionallity" className="details-group">
                 <span className="details-group-title">NATIONALLITY</span>
                 <span
@@ -77,6 +77,8 @@ const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
               <span className="details-group-title">HEIGHT</span>
               <span className="details-group-content">{card.height}</span>
             </li>
+          </div>
+          <div className="details-values">
             <li key="shooting" className="details-group">
               <span className="details-group-title">SHOOTING</span>
               <span className="details-group-content">{card.shooting}</span>
@@ -89,6 +91,8 @@ const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
               <span className="details-group-title">FOOT</span>
               <span className="details-group-content">{card.foot}</span>
             </li>
+          </div>
+          <div className="details-values">
             <li key="passing" className="details-group">
               <span className="details-group-title">PASSING</span>
               <span className="details-group-content">{card.passing}</span>

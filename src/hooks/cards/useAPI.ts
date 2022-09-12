@@ -74,6 +74,7 @@ const useApi = () => {
       dispatch(createCardActionCreator(data));
 
       successModal("Card created successfully!");
+      navigate("/cards");
     } catch (error) {
       errorModal("Error creating card");
     }
