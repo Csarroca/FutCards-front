@@ -11,13 +11,17 @@ const ButtonStyled = styled.button`
   cursor: pointer;
   border: none;
   outline: none;
-
   &.greenButton {
     background-color: ${styles.colors.globalGreen};
   }
-
   &.redButton {
     background-color: ${styles.colors.globalRed};
+  }
+  &.greenButton:hover {
+    background-color: ${styles.colors.globalDarkGreen};
+  }
+  &.redButton:hover {
+    background-color: ${styles.colors.globalRedHover};
   }
 `;
 
