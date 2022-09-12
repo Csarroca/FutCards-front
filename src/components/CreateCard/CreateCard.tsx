@@ -231,7 +231,7 @@ const CreateCard = (): JSX.Element => {
               <option value="st">ST</option>
               <option value="mc">MC</option>
               <option value="dfc">DFC</option>
-              <option value="por">POR</option>
+              <option value="gk">GK</option>
             </select>
           </div>
           <div className="form-group">

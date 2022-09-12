@@ -15,6 +15,7 @@ export interface ProtoCard {
   age: number;
   foot: string;
   owner?: string;
+  backupImage?: string;
 }
 
 export interface Card extends ProtoCard {

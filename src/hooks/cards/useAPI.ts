@@ -111,6 +111,24 @@ const useApi = () => {
     }
   };
 
+  const getByPosition = async (position: string) => {
+    try {
+      const {
+        data: { cards },
+      } = await axios.get(`${url}/cards/position/${position}`);
+
+      if (cards.length === 0) {
+        errorModal("Can not find cards with this position");
+
+        return;
+      }
+
+      dispatch(loadAllCardsActionCreator(cards));
+    } catch (error) {
+      errorModal("Problem at finding cards");
+    }
+  };
+
   return {
     cards,
     getAllCards,
@@ -118,6 +136,7 @@ const useApi = () => {
     createCard,
     getCardById,
     updateCard,
+    getByPosition,
   };
 };
 
