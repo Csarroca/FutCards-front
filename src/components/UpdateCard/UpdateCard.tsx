@@ -5,6 +5,7 @@ import Button from "../Button/Button";
 import { ToastContainer } from "react-toastify";
 import UpdateCardStyled from "./UpdateCardStyled";
 import { useParams } from "react-router-dom";
+import { useAppSelector } from "../../app/store/hooks";
 
 let formData = new FormData();
 
@@ -30,6 +31,7 @@ const UpdateCard = (): JSX.Element => {
   const { updateCard } = useApi();
   const [newCard, setNewCard] = useState(initialCard);
   const { id } = useParams();
+  const { id: idUser } = useAppSelector((state) => state.users);
 
   const onChangeField = (
     event:
@@ -44,10 +46,11 @@ const UpdateCard = (): JSX.Element => {
 
   const handleUpdate = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    formData.append("card", JSON.stringify({ ...newCard }));
+    formData.append("card", JSON.stringify({ ...newCard, owner: idUser }));
     updateCard(formData, id as string);
 
     setNewCard(initialCard);
+    formData = new FormData();
   };
 
   const onChangeFile = (event: React.ChangeEvent<HTMLInputElement>) => {

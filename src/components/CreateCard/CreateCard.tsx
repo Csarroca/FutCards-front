@@ -50,6 +50,7 @@ const CreateCard = (): JSX.Element => {
     await createCard(formData);
 
     setNewCard(initialCard);
+    formData = new FormData();
   };
 
   const onChangeFile = (event: React.ChangeEvent<HTMLInputElement>) => {
