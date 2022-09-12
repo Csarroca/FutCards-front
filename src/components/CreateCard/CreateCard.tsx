@@ -33,7 +33,11 @@ const CreateCard = (): JSX.Element => {
   const { createCard } = useApi();
   const [newCard, setNewCard] = useState(initialCard);
 
-  const onChangeField = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeField = (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLSelectElement>
+  ) => {
     setNewCard({
       ...newCard,
       [event.target.id]: event.target.value,
@@ -65,7 +69,13 @@ const CreateCard = (): JSX.Element => {
         >
           <div className="form-group">
             <label htmlFor="name">Name</label>
-            <input type="text" id="name" onChange={onChangeField} required />
+            <input
+              type="text"
+              id="name"
+              value={newCard.name}
+              onChange={onChangeField}
+              required
+            />
           </div>
 
           <div className="form-group">
@@ -200,26 +210,28 @@ const CreateCard = (): JSX.Element => {
             />
           </div>
 
-          <div className="form-group">
+          <div className="form-group select">
             <label htmlFor="foot">Foot</label>
-            <input
-              type="text"
-              id="foot"
-              value={newCard.foot}
-              onChange={onChangeField}
-              required
-            />
+            <select id="foot" onChange={onChangeField} required>
+              <option hidden disabled selected value="select an option">
+                Select an option
+              </option>
+              <option value="r">R</option>
+              <option value="l">L</option>
+            </select>
           </div>
 
-          <div className="form-group">
+          <div className="form-group select">
             <label htmlFor="position">Position</label>
-            <input
-              type="text"
-              id="position"
-              value={newCard.position}
-              onChange={onChangeField}
-              required
-            />
+            <select id="position" onChange={onChangeField} required>
+              <option hidden disabled selected value="select an option">
+                Select an option
+              </option>
+              <option value="st">ST</option>
+              <option value="mc">MC</option>
+              <option value="dfc">DFC</option>
+              <option value="por">POR</option>
+            </select>
           </div>
           <div className="form-group">
             <label htmlFor="image">Image</label>

@@ -7,19 +7,18 @@ const NotFoundPageStyled = styled.div`
   align-items: center;
   background-color: #2b663d;
   color: white;
-  height: 100vh;
-
+  min-height: calc(100vh - 170px);
+  overflow: hidden;
   .page-image {
-    display: flex;
-    align-self: center;
-    height: auto;
-    max-width: 80%;
+    margin-left: 50px;
   }
-
   .link {
     height: 25px;
     width: 25px;
     color: white;
+  }
+  @media (min-width: 1000px) {
+    min-height: calc(100vh - 230px);
   }
 `;
 
