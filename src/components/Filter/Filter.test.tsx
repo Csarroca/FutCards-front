@@ -67,7 +67,7 @@ describe("Given a filter component", () => {
     test("And when the user choose the All option getByPosition method", async () => {
       jest.restoreAllMocks();
 
-      const option = "ST";
+      const option = "st";
 
       render(
         <BrowserRouter>

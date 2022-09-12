@@ -1,4 +1,4 @@
-import { SyntheticEvent, useState } from "react";
+import { SyntheticEvent, useEffect, useState } from "react";
 import useApi from "../../hooks/cards/useAPI";
 import FilterStyled from "./FilterStyled";
 
@@ -12,6 +12,7 @@ const Filter = (): JSX.Element => {
       [event.target.id]: event.target.value,
     });
   };
+
   const handleGetPosition = async (event: SyntheticEvent) => {
     event.preventDefault();
     if (state.position === "All") {
@@ -20,6 +21,7 @@ const Filter = (): JSX.Element => {
     }
     await getByPosition(state.position);
   };
+
   return (
     <FilterStyled noValidate onSubmit={handleGetPosition}>
       <div className="input-container">
@@ -32,13 +34,19 @@ const Filter = (): JSX.Element => {
           className="select-input"
         >
           <option>All</option>
-          <option>ST</option>
-          <option>MC</option>
-          <option>DFC</option>
-          <option>GK</option>
+          <option>st</option>
+          <option>mc</option>
+          <option>dfc</option>
+          <option>gk</option>
         </select>
       </div>
-      <button className="button" type="submit">
+      <button
+        className="button"
+        type="submit"
+        onClick={() => {
+          getByPosition(state.position);
+        }}
+      >
         FILTER
       </button>
     </FilterStyled>

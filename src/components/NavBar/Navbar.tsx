@@ -20,7 +20,6 @@ const Navbar = () => {
         <NavbarStyled>
           <nav className="navbar">
             <ul className="navbar-list">
-              <li className="navbar-list__link">Filter</li>
               <li>
                 <NavLink to="/create" className="navbar-list__link">
                   Create card
