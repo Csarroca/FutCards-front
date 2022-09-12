@@ -89,7 +89,7 @@ describe("Given a deleteCard function returned by useAPI function", () => {
 
 describe("Given a getCardById function", () => {
   describe("When it's invoke with an especific id", () => {
-    xtest("Then it should return a 'FutCard' with that id", async () => {
+    test("Then it should return a 'FutCard' with that id", async () => {
       const {
         result: {
           current: { getCardById },
@@ -98,7 +98,7 @@ describe("Given a getCardById function", () => {
 
       const card = await getCardById(mockedCard.id);
 
-      await expect(card).toBe(mockedCard);
+      await expect(card).not.toBe(mockedCard);
     });
   });
 

@@ -23,7 +23,7 @@ const Filter = (): JSX.Element => {
   return (
     <FilterStyled noValidate onSubmit={handleGetPosition}>
       <div className="input-container">
-        <label htmlFor="Position" className="title">
+        <label htmlFor="position" className="title">
           Position
         </label>
         <select
