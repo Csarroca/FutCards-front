@@ -5,8 +5,6 @@ import { useAppSelector } from "../../app/store/hooks";
 import useApi from "../../hooks/cards/useAPI";
 import { useNavigate } from "react-router-dom";
 
-const url = process.env.REACT_APP_API_URL as string;
-
 interface FutCardProps {
   card: Card;
 }
@@ -52,7 +50,7 @@ const FutCard = ({ card }: FutCardProps): JSX.Element => {
 
               <img
                 className="image"
-                src={`${url}/${card.image}`}
+                src={card.backupImage}
                 alt={`${card.name} avatar`}
               ></img>
             </div>
