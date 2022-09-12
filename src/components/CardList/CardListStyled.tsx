@@ -8,10 +8,9 @@ const CardListStyled = styled.div`
     gap: 35px;
     justify-content: space-between;
     padding: 20px;
-    @media (min-width: 900px) {
+    @media (min-width: 1000px) {
       flex-direction: row;
       flex-wrap: wrap;
-      justify-content: space-around;
     }
   }
   .cards-list__title {
