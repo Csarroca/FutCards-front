@@ -21,6 +21,7 @@ const initialCard: Card = {
   height: 0,
   age: 0,
   foot: "",
+  owner: "",
 };
 
 const DetailedCardPage = (): JSX.Element => {

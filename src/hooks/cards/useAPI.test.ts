@@ -51,7 +51,7 @@ describe("Given a deleteCard function returned by useAPI function", () => {
 
       await waitFor(() => {
         expect(mockUseDispatch).toHaveBeenCalledWith(
-          deleteCardActionCreator(mockedCard.id)
+          deleteCardActionCreator(mockedCard.id as string)
         );
       });
 
@@ -74,7 +74,7 @@ describe("Given a deleteCard function returned by useAPI function", () => {
 
       await waitFor(() => {
         expect(mockUseDispatch).not.toHaveBeenCalledWith(
-          deleteCardActionCreator(mockedCard.id)
+          deleteCardActionCreator(mockedCard.id as string)
         );
       });
 
