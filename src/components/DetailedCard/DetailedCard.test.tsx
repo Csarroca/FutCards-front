@@ -42,7 +42,7 @@ describe("Given a detailedCard component", () => {
       expect(heading).toBeInTheDocument();
     });
 
-    test("If the user click on the delete button it should call the  delete  function with the id of the card", async () => {
+    test("If the user clicks on the delete button it should call the  delete  function with the id of the card", async () => {
       wrappedRender(<DetailedCard card={mockedCard} />);
       const route = "/cards";
       const deleteButton = screen.getByText("DELETE");
@@ -53,9 +53,9 @@ describe("Given a detailedCard component", () => {
       expect(mockNavigate).toBeCalledWith(route);
     });
 
-    xtest("If the user click on the modify button it should call the navigate with /modify/ and the id of the review", async () => {
+    test("If the user clicks edit button it should call the navigate with cars/update/ and the id of the review", async () => {
       wrappedRender(<DetailedCard card={mockedCard} />);
-      const route = `cards/update/${mockCards[0].id}`;
+      const route = `/cards/update/${mockCards[0].id}`;
       const modifyButton = screen.getByText("EDIT");
 
       await userEvent.click(modifyButton);
@@ -63,7 +63,7 @@ describe("Given a detailedCard component", () => {
       expect(mockNavigate).toBeCalledWith(route);
     });
 
-    test("If user's id is different as review's owner delete button shouldn't be in the document", async () => {
+    test("If user's id is the same as card owner, delete button should be in the document", async () => {
       wrappedRender(<DetailedCard card={mockedCard} />);
 
       const editButton = screen.queryByText("DELETE");
@@ -71,7 +71,7 @@ describe("Given a detailedCard component", () => {
       expect(editButton).toBeInTheDocument();
     });
 
-    test("If user's id is different as review's owner edit button shouldn't be in the document", async () => {
+    test("If user's id is different  owner edit button should be in the document", async () => {
       wrappedRender(<DetailedCard card={mockedCard} />);
 
       const editButton = screen.queryByText("EDIT");
@@ -79,9 +79,9 @@ describe("Given a detailedCard component", () => {
       expect(editButton).toBeInTheDocument();
     });
 
-    test("If user's id is different as review's owner edit button shouldn't be in tewfgerfghe document", async () => {
+    test("If user's id is different as carr owner edit button shouldn't be in  document", async () => {
       mockUseAppSelector = {
-        id: "dfdggfdgfdgdfg",
+        id: "wrongID",
       };
 
       wrappedRender(<DetailedCard card={mockedCard} />);

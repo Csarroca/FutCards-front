@@ -18,6 +18,10 @@ const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
 
   const { deleteCard } = useApi();
 
+  const handleNavigate = () => {
+    navigate(`/cards/update/${card.id}`);
+  };
+
   const handleDelete = () => {
     deleteCard(card.id as string);
 
@@ -106,15 +110,13 @@ const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
 
         {card.owner === id && (
           <div className="buttons-container">
-            <NavLink to={`/cards/update/${card.id}`} className="details-list">
-              <Button
-                isDisabled={false}
-                type={"button"}
-                className="greenButton link"
-                actionOnclick={() => {}}
-                buttonText={"EDIT"}
-              ></Button>
-            </NavLink>
+            <Button
+              isDisabled={false}
+              type={"button"}
+              className="greenButton link"
+              actionOnclick={() => handleNavigate()}
+              buttonText={"EDIT"}
+            ></Button>
 
             <Button
               isDisabled={false}
