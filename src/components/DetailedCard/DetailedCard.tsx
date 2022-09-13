@@ -19,7 +19,7 @@ const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
   const { deleteCard } = useApi();
 
   const handleDelete = () => {
-    deleteCard(card.id);
+    deleteCard(card.id as string);
 
     navigate("/cards");
   };
