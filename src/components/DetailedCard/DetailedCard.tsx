@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../app/store/hooks";
 import { Card } from "../../features/cards/models/card";
 import useApi from "../../hooks/cards/useAPI";
@@ -17,6 +17,10 @@ const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
   const { id } = useAppSelector((state) => state.users);
 
   const { deleteCard } = useApi();
+
+  const handleNavigate = () => {
+    navigate(`/cards/update/${card.id}`);
+  };
 
   const handleDelete = () => {
     deleteCard(card.id as string);
@@ -106,15 +110,13 @@ const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
 
         {card.owner === id && (
           <div className="buttons-container">
-            <NavLink to={`/cards/update/${card.id}`} className="details-list">
-              <Button
-                isDisabled={false}
-                type={"button"}
-                className="greenButton link"
-                actionOnclick={() => {}}
-                buttonText={"EDIT"}
-              ></Button>
-            </NavLink>
+            <Button
+              isDisabled={false}
+              type={"button"}
+              className="greenButton link"
+              actionOnclick={() => handleNavigate()}
+              buttonText={"EDIT"}
+            ></Button>
 
             <Button
               isDisabled={false}
