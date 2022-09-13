@@ -90,14 +90,4 @@ export const handlers = [
       );
     }
   ),
-
-  rest.get(
-    `${process.env.REACT_APP_API_URL}/cards/wrongId`,
-    (_req, res, ctx) => {
-      return res(
-        ctx.status(404),
-        ctx.json({ error: "Can not show details from this card" })
-      );
-    }
-  ),
 ];
