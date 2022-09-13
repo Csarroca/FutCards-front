@@ -33,7 +33,7 @@ const Filter = (): JSX.Element => {
           onChange={onChangeSelect}
           className="select-input"
         >
-          <option>All</option>
+          <option className="select">All</option>
           <option>st</option>
           <option>mc</option>
           <option>dfc</option>
@@ -47,7 +47,7 @@ const Filter = (): JSX.Element => {
           getByPosition(state.position);
         }}
       >
-        FILTER
+        filter
       </button>
     </FilterStyled>
   );

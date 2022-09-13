@@ -84,7 +84,9 @@ const DetailedCardStyled = styled.div`
       flex-direction: column;
       gap: 20px 0;
       padding-top: 20px;
+      align-items: center;
     }
+
     @media (min-width: 1000px) {
       padding: 40px 80px;
       min-height: calc(100vh - 230px);

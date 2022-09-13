@@ -42,10 +42,6 @@ const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
                   {card.position.toUpperCase()}
                 </span>
               </li>
-              <li key="overall" className="details-group">
-                <span className="details-group-title">OVERALL RATING</span>
-                <span className="details-group-content">{card.overall}</span>
-              </li>
             </div>
             <div className="details-info images">
               <li key="nacionallity" className="details-group">
@@ -110,14 +106,11 @@ const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
 
         {card.owner === id && (
           <div className="buttons-container">
-            <NavLink
-              to={`/cards/update/${card.id}`}
-              className="navbar-list__link"
-            >
+            <NavLink to={`/cards/update/${card.id}`} className="details-list">
               <Button
                 isDisabled={false}
                 type={"button"}
-                className="greenButton"
+                className="greenButton link"
                 actionOnclick={() => {}}
                 buttonText={"EDIT"}
               ></Button>

@@ -11,6 +11,7 @@ const RegisterFormStyled = styled.div`
       background-color: ${styles.colors.backgroundLight};
       border: none;
       border-bottom: 1px solid ${styles.colors.darkButtonHover};
+      height: 40px;
     }
 
     &__submit {
@@ -24,7 +25,10 @@ const RegisterFormStyled = styled.div`
   }
   input {
     padding-left: 15px;
-    padding-bottom: 15px;
+    height: 40px;
+    background-color: ${styles.colors.backgroundLight};
+    border: none;
+    border-bottom: 1px solid ${styles.colors.darkButtonHover};
   }
 
   .error {
