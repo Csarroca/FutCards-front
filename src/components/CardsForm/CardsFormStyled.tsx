@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import styles from "../../styles/styles";
 
-const UpdateCardStyled = styled.div`
+const CardsFormStyled = styled.div`
   .create-card {
     color: ${styles.colors.backgroundDark};
     margin: 20px 40px;
@@ -97,4 +97,4 @@ const UpdateCardStyled = styled.div`
   }
 `;
 
-export default UpdateCardStyled;
+export default CardsFormStyled;
