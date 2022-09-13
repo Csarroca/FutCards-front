@@ -1,6 +1,6 @@
 export interface ProtoCard {
   name: string;
-  image: string;
+  image: string | File;
   position: string;
   nacionallity: string;
   team: string;
@@ -15,7 +15,7 @@ export interface ProtoCard {
   age: number;
   foot: string;
   owner: string;
-  backupImage?: string;
+  backupImage: string;
 }
 
 export interface Card extends ProtoCard {

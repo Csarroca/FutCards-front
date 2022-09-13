@@ -24,7 +24,7 @@ jest.mock("../../hooks/cards/useAPI", () => () => mockUseApi);
 
 describe("Given a DetailedCardPage component", () => {
   describe("When it's instantiated", () => {
-    xtest("Then should show  a DetailedCard with two button", async () => {
+    test("Then should show  a DetailedCard with two button", async () => {
       render(<DetailedCardPage />, { wrapper: Wrapper });
       const expectedTextButton = "EDIT";
       const expectedTextButton2 = "DELETE";

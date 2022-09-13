@@ -18,6 +18,7 @@ const CreateCardPage = (): JSX.Element => {
     age: 0,
     foot: "",
     owner: "",
+    backupImage: "",
   };
   return (
     <>

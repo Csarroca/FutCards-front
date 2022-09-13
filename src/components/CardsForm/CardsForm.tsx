@@ -66,7 +66,7 @@ const CardsForm = ({ card, textButton }: CardsFormProps): JSX.Element => {
 
   const onChangeFile = (event: React.ChangeEvent<HTMLInputElement>) => {
     formData.append("image", event.target.files![0]);
-    setNewCard({ ...newCard, image: event.target.value });
+    setNewCard({ ...newCard, image: event.target.files![0] });
   };
   return (
     <CardsFormStyled>
@@ -246,14 +246,10 @@ const CardsForm = ({ card, textButton }: CardsFormProps): JSX.Element => {
         <div className="form-group">
           <label htmlFor="image">Image</label>
           <label htmlFor="file-upload" className="custom-file-upload">
-            <i className="fa fa-cloud-upload"></i>
-            {newCard.image ? newCard.image : "Click to upload image"}
-            <input
-              id="file-upload"
-              type="file"
-              //value={newCard.image}
-              onChange={onChangeFile}
-            />
+            Choose an image
+            {/* <i className="fa fa-cloud-upload"></i>
+            {newCard.image ? newCard.image : "Click to upload image"} */}
+            <input id="file-upload" type="file" onChange={onChangeFile} />
           </label>
         </div>
         <div className="form-group">

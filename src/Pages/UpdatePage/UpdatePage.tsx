@@ -23,6 +23,7 @@ const UpdatePage = (): JSX.Element => {
     age: 0,
     foot: "",
     owner: "",
+    backupImage: "",
   };
 
   const [card, setCard] = useState(initialCard);
