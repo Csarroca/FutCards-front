@@ -21,6 +21,8 @@ const initialCard: Card = {
   height: 0,
   age: 0,
   foot: "",
+  owner: "",
+  backupImage: "",
 };
 
 const DetailedCardPage = (): JSX.Element => {

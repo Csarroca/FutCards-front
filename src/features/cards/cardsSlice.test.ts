@@ -30,7 +30,7 @@ describe("Given a deleteCardActionCreator function", () => {
         payload: mockedCard.id,
       };
 
-      const action = deleteCardActionCreator(expectedAction.payload);
+      const action = deleteCardActionCreator(expectedAction.payload as string);
 
       expect(action).toStrictEqual(expectedAction);
     });
@@ -56,7 +56,7 @@ describe("Given a cardsReducer function", () => {
       const initialState = [mockedCard] as Card[];
 
       const expectedResult = [] as Card[];
-      const action = deleteCardActionCreator(mockedCard.id);
+      const action = deleteCardActionCreator(mockedCard.id as string);
 
       const result = cardsReducer(initialState, action);
 

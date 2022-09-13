@@ -16,7 +16,7 @@ const FutCard = ({ card }: FutCardProps): JSX.Element => {
   const { deleteCard } = useApi();
 
   const handleDelete = (event: React.MouseEvent<SVGElement, MouseEvent>) => {
-    deleteCard(card.id);
+    deleteCard(card.id as string);
   };
 
   return (
