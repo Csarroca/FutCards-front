@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../app/store/hooks";
 import { Card } from "../../features/cards/models/card";
 import useApi from "../../hooks/cards/useAPI";
