@@ -31,11 +31,7 @@ const Navbar = () => {
                   Cards
                 </NavLink>
               </li>
-              <li>
-                <NavLink to="/my-team" className="navbar-list__link">
-                  My team
-                </NavLink>
-              </li>
+
               <li>
                 <NavLink
                   to="/login"

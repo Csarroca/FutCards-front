@@ -49,17 +49,10 @@ const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
             </div>
             <div className="details-info images">
               <li key="nacionallity" className="details-group">
-                <span className="details-group-title">NATIONALLITY</span>
+                <span className="details-group-title">AVATAR</span>
                 <span
                   className="details-group-content renderImage"
-                  style={imageUrl(card.nacionallity)}
-                ></span>
-              </li>
-              <li key="team" className="details-group">
-                <span className="details-group-title">TEAM</span>
-                <span
-                  className="details-group-content renderImage"
-                  style={imageUrl(card.team)}
+                  style={imageUrl(card.backupImage)}
                 ></span>
               </li>
             </div>

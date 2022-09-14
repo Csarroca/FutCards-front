@@ -32,7 +32,7 @@ const FutCardStyled = styled.div`
         );
         .image {
           position: absolute;
-          right: 42px;
+          right: 85px;
           bottom: 26px;
           z-index: 2;
           height: 138px;
@@ -205,7 +205,7 @@ const FutCardStyled = styled.div`
     color: #fdeaa7;
     position: absolute;
     z-index: 4;
-    height: 26px;
+    height: 40px;
     width: 25px;
     box-sizing: border-box;
     padding: 0px 2px;

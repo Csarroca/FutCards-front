@@ -40,12 +40,6 @@ const FutCard = ({ card }: FutCardProps): JSX.Element => {
             <div className="card-top">
               <div className="info">
                 <div className="position">{card.position}</div>
-                <div className="country">
-                  <img src={card.nacionallity} alt="country flag" />
-                </div>
-                <div className="club">
-                  <img src={card.team} alt="club of football" />
-                </div>
               </div>
 
               <img
