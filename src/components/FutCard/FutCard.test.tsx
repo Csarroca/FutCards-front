@@ -20,14 +20,10 @@ describe("Given a FutCard component", () => {
     test("Then it should show the image of the player, of the country flag, and the team", () => {
       render(<FutCard card={mockedCard} />, { wrapper: Wrapper });
 
-      const expectedNumberOfImages = 3;
+      const expectedNumberOfImages = 1;
       const images = screen.getAllByRole("img");
 
-      const renderedImages = [
-        screen.getByAltText("country flag"),
-        screen.getByAltText("club of football"),
-        screen.getByAltText(`${mockedCard.name} avatar`),
-      ];
+      const renderedImages = [screen.getByAltText(`${mockedCard.name} avatar`)];
 
       expect(images).toHaveLength(expectedNumberOfImages);
       renderedImages.forEach((image) => expect(image).toBeInTheDocument());

@@ -35,8 +35,7 @@ describe("Given a Navbar component", () => {
     test("Then it should show 'Create card','Cards','My team','Logout' inside the Navbar'", () => {
       const text1 = "Create card";
       const text2 = "Cards";
-      const text3 = "My team";
-      const text4 = "Logout";
+      const text3 = "Logout";
 
       render(<Navbar />, { wrapper: Wrapper });
 
@@ -45,11 +44,9 @@ describe("Given a Navbar component", () => {
         screen.getByRole("link", {
           name: text2,
         }),
+
         screen.getByRole("link", {
           name: text3,
-        }),
-        screen.getByRole("link", {
-          name: text4,
         }),
       ];
 
@@ -66,7 +63,7 @@ describe("Given a Navbar component", () => {
       describe("and the user clicks logout", () => {
         test("then it will be logout and redirect to login page", async () => {
           const mockLocation = {
-            pathname: "/destinos",
+            pathname: "/cards",
             Location: "",
             key: "",
             search: "",
