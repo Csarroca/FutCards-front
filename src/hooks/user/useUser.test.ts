@@ -3,6 +3,8 @@ import { toast } from "react-toastify";
 import { AuthData } from "../../types/interfaces";
 import Wrapper from "../../utils/Wrapper";
 import useUser from "./useUser";
+import { logoutUsers } from "../../features/users/UserSlice";
+import { act } from "react-dom/test-utils";
 
 jest.mock("react-toastify");
 
@@ -10,6 +12,13 @@ jest.mock("../../utils/auth", () => () => ({
   token: "234ffgg44",
   id: "24sdf",
   userName: "paco",
+}));
+
+const mockUseDispatch = jest.fn();
+
+jest.mock("../../app/store/hooks", () => ({
+  ...jest.requireActual("../../app/store/hooks"),
+  useAppDispatch: () => mockUseDispatch,
 }));
 
 describe("Given a useUser hook", () => {
@@ -95,6 +104,21 @@ describe("Given a useUser hook", () => {
           }
         );
       });
+    });
+  });
+  describe("When invoke logout function with a mockUser", () => {
+    test("Then it should logout from the page", async () => {
+      const {
+        result: {
+          current: { logout },
+        },
+      } = renderHook(useUser, { wrapper: Wrapper });
+
+      await act(() => {
+        logout();
+      });
+
+      expect(mockUseDispatch).toHaveBeenCalledWith(logoutUsers());
     });
   });
 });
