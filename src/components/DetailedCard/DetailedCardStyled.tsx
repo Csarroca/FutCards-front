@@ -46,9 +46,10 @@ const DetailedCardStyled = styled.div`
       font-size: 24px;
       color: ${styles.colors.globalGreen};
       font-weight: 600;
+
       &.renderImage {
-        width: 140px;
-        height: 66px;
+        width: 200px;
+        height: 200px;
         background-repeat: no-repeat;
         background-size: contain;
       }
