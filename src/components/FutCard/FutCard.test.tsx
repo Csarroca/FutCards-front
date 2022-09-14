@@ -15,6 +15,14 @@ jest.mock("../../app/store/hooks", () => ({
   useAppSelector: () => mockedUser,
 }));
 
+const mockNavigate = jest.fn().mockReturnValue(mockedCard.id);
+
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useParams: () => ({ id: mockedCard.id }),
+  useNavigate: () => mockNavigate,
+}));
+
 describe("Given a FutCard component", () => {
   describe("When instantiated with a card object as props", () => {
     test("Then it should show the image of the player, of the country flag, and the team", () => {
@@ -56,5 +64,15 @@ describe("Given a FutCard component", () => {
     await userEvent.click(icon);
 
     expect(mockDeleteCardFunction).toHaveBeenCalled();
+  });
+
+  test("Then if user clicks the card, then it should redirect to the details of the card", async () => {
+    render(<FutCard card={mockedCard} />, { wrapper: Wrapper });
+
+    const card = screen.getByAltText("Seirroks avatar");
+
+    await userEvent.click(card);
+
+    expect(mockNavigate).toHaveBeenCalled();
   });
 });
