@@ -3,9 +3,15 @@ import styles from "../../styles/styles";
 
 const RegisterFormStyled = styled.div`
   padding-top: 80px;
+
+  .register__submit {
+    margin-bottom: 20px;
+  }
+
   .register {
     display: flex;
     flex-direction: column;
+    //gap: 50px;
 
     &__input {
       background-color: ${styles.colors.backgroundLight};
@@ -13,10 +19,6 @@ const RegisterFormStyled = styled.div`
       border-bottom: 1px solid ${styles.colors.darkButtonHover};
       height: 40px;
     }
-
-    &__submit {
-    }
-    gap: 50px;
   }
   label {
     font-weight: 400;
@@ -36,6 +38,10 @@ const RegisterFormStyled = styled.div`
     &-text {
       color: red;
     }
+  }
+
+  &__submit {
+    margin-bottom: 20px;
   }
 `;
 

@@ -21,6 +21,10 @@ export const errorModal = (error: string) =>
   toast.error(error, {
     position: toast.POSITION.TOP_CENTER,
   });
+export const loadingModal = (loading: string) =>
+  toast.loading(loading, {
+    position: toast.POSITION.TOP_CENTER,
+  });
 
 const url = process.env.REACT_APP_API_URL as string;
 
@@ -73,7 +77,15 @@ const useApi = () => {
 
       dispatch(createCardActionCreator(data));
 
-      successModal("Card created successfully!");
+      toast.success("Card created successfully!", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       navigate("/cards");
     } catch (error) {
       errorModal("Error creating card");
@@ -103,6 +115,7 @@ const useApi = () => {
           },
         }
       );
+      successModal("Card updated successfully!");
 
       dispatch(updateCardActionCreator(data));
       navigate("/cards");

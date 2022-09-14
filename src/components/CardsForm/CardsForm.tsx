@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Card } from "../../features/cards/models/card";
 import useApi from "../../hooks/cards/useAPI";
 import Button from "../Button/Button";
-import { ToastContainer } from "react-toastify";
 import { useParams } from "react-router-dom";
 import { useAppSelector } from "../../app/store/hooks";
 import CardsFormStyled from "./CardsFormStyled";
@@ -70,12 +69,12 @@ const CardsForm = ({ card, textButton }: CardsFormProps): JSX.Element => {
   };
   return (
     <CardsFormStyled>
-      <ToastContainer />
       <form
         className="create-card"
         autoComplete="off"
         noValidate
         onSubmit={handleSubmit}
+        data-testid="form"
       >
         <div className="form-group">
           <label htmlFor="name">Name</label>
@@ -83,27 +82,6 @@ const CardsForm = ({ card, textButton }: CardsFormProps): JSX.Element => {
             type="text"
             id="name"
             value={newCard.name}
-            onChange={onChangeField}
-            required
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="nacionallity">Nacionallity</label>
-          <input
-            id="nacionallity"
-            type="text"
-            value={newCard.nacionallity}
-            onChange={onChangeField}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="team">Team</label>
-          <input
-            type="text"
-            id="team"
-            value={newCard.team}
             onChange={onChangeField}
             required
           />
@@ -193,7 +171,7 @@ const CardsForm = ({ card, textButton }: CardsFormProps): JSX.Element => {
         </div>
 
         <div className="form-group range">
-          <label htmlFor="height">Height</label>
+          <label htmlFor="height">Height cm</label>
           <output id="height">{newCard.height}</output>
           <input
             min="0"
