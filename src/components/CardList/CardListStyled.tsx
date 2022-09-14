@@ -5,7 +5,7 @@ const CardListStyled = styled.div`
   ul {
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    gap: 35px 15px;
     justify-content: space-between;
     padding: 20px;
     @media (min-width: 800px) {
