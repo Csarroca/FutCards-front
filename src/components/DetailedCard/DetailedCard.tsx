@@ -58,10 +58,6 @@ const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
             </div>
           </div>
           <div className="details-values">
-            <li key="pace" className="details-group">
-              <span className="details-group-title">PACE</span>
-              <span className="details-group-content">{card.pace}</span>
-            </li>
             <li key="dribbling" className="details-group">
               <span className="details-group-title">DRIBBLING</span>
               <span className="details-group-content">{card.dribbling}</span>
@@ -69,6 +65,12 @@ const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
             <li key="height" className="details-group">
               <span className="details-group-title">HEIGHT</span>
               <span className="details-group-content">{card.height}</span>
+            </li>
+            <li key="foot" className="details-group">
+              <span className="details-group-title">FOOT</span>
+              <span className="details-group-content">
+                {card.foot.toUpperCase()}
+              </span>
             </li>
           </div>
           <div className="details-values">
@@ -80,9 +82,9 @@ const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
               <span className="details-group-title">DEFENCE</span>
               <span className="details-group-content">{card.defense}</span>
             </li>
-            <li key="foot" className="details-group">
-              <span className="details-group-title">FOOT</span>
-              <span className="details-group-content">{card.foot}</span>
+            <li key="age" className="details-group">
+              <span className="details-group-title">AGE</span>
+              <span className="details-group-content">{card.age}</span>
             </li>
           </div>
           <div className="details-values">
@@ -94,9 +96,10 @@ const DetailedCard = ({ card }: DetailedCardProps): JSX.Element => {
               <span className="details-group-title">PHYSICAL</span>
               <span className="details-group-content">{card.physicall}</span>
             </li>
-            <li key="age" className="details-group">
-              <span className="details-group-title">AGE</span>
-              <span className="details-group-content">{card.age}</span>
+
+            <li key="pace" className="details-group">
+              <span className="details-group-title">PACE</span>
+              <span className="details-group-content">{card.pace}</span>
             </li>
           </div>
         </ul>
