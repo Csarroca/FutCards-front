@@ -53,7 +53,7 @@ const RegisterForm = (): JSX.Element => {
           id="userName"
           type="text"
           name="userName"
-          placeholder="Username"
+          placeholder="username"
           required
           autoComplete="off"
           value={registerData.userName}
