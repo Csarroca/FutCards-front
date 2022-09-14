@@ -44,7 +44,6 @@ const useApi = () => {
           Authorization: `Bearer ${localStorage.token}`,
         },
       });
-      loadingModal("loading");
       dispatch<PayloadAction<Card[]>>(loadAllCardsActionCreator(data));
     } catch (error) {}
   }, [dispatch]);
@@ -78,7 +77,7 @@ const useApi = () => {
 
       dispatch(createCardActionCreator(data));
 
-      toast.success("🦄 Wow so easy!", {
+      toast.success("Card created successfully!", {
         position: "top-center",
         autoClose: 3000,
         hideProgressBar: false,

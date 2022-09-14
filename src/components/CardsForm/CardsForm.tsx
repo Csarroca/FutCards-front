@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Card } from "../../features/cards/models/card";
 import useApi from "../../hooks/cards/useAPI";
 import Button from "../Button/Button";
-import { ToastContainer } from "react-toastify";
 import { useParams } from "react-router-dom";
 import { useAppSelector } from "../../app/store/hooks";
 import CardsFormStyled from "./CardsFormStyled";
@@ -70,17 +69,6 @@ const CardsForm = ({ card, textButton }: CardsFormProps): JSX.Element => {
   };
   return (
     <CardsFormStyled>
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
       <form
         className="create-card"
         autoComplete="off"

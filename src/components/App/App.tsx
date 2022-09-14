@@ -19,6 +19,7 @@ import { loginUsers } from "../../features/users/UserSlice";
 import { PayloadAction } from "@reduxjs/toolkit";
 import DetailedCardPage from "../../Pages/DetailedCardPage/DetailedCardPage";
 import UpdatePage from "../../Pages/UpdatePage/UpdatePage";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const token = localStorage.getItem("token");
@@ -32,6 +33,17 @@ function App() {
 
   return (
     <AppStyled>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Header />
       <Navbar />
       <Routes>

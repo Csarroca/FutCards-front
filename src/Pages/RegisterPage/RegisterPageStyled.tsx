@@ -5,6 +5,7 @@ const RegisterPageStyled = styled.div`
   max-width: 375px;
   margin: 0 auto;
   width: 85%;
+  margin-bottom: 20px;
 
   .register-title {
     color: ${styles.colors.globalDarkGreen};
