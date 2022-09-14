@@ -6,8 +6,9 @@ const FilterStyled = styled.form`
   gap: 20px;
   margin-bottom: 20px;
   background-color: ${styles.colors.globalGreen};
+  justify-content: center;
 
-  width: 90%;
+  width: 100%;
   .title {
     color: white;
     padding: 10px;
