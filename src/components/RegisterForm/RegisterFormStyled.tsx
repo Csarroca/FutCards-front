@@ -11,7 +11,7 @@ const RegisterFormStyled = styled.div`
   .register {
     display: flex;
     flex-direction: column;
-    //gap: 50px;
+    gap: 40px;
 
     &__input {
       background-color: ${styles.colors.backgroundLight};
