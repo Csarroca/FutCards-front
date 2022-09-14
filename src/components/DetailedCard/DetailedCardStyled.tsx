@@ -36,6 +36,7 @@ const DetailedCardStyled = styled.div`
     .details-group {
       display: flex;
       flex-direction: column;
+      margin-left: 20px;
     }
     .details-group-title {
       margin: 0;
