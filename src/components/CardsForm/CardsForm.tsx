@@ -37,9 +37,11 @@ const CardsForm = ({ card, textButton }: CardsFormProps): JSX.Element => {
   };
 
   const [newCard, setNewCard] = useState(initialState);
+
   useEffect(() => {
     setNewCard(card);
   }, [card]);
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     formData.append("card", JSON.stringify({ ...newCard, owner: userId }));
@@ -225,8 +227,6 @@ const CardsForm = ({ card, textButton }: CardsFormProps): JSX.Element => {
           <label htmlFor="image">Image</label>
           <label htmlFor="file-upload" className="custom-file-upload">
             Choose an image
-            {/* <i className="fa fa-cloud-upload"></i>
-            {newCard.image ? newCard.image : "Click to upload image"} */}
             <input id="file-upload" type="file" onChange={onChangeFile} />
           </label>
         </div>

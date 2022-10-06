@@ -1,46 +1,57 @@
-# Getting Started with Create React App
+# FUTCARDS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
+FutCards is the place where you can create your own fifa football player Cards. Also you can modify and share with your friends and deleted when you get bored. You can filter the cards by position.
 
-## Available Scripts
+Comming soon you will be able to create your own team icluding all your friends!
 
-In the project directory, you can run:
+## Technologies:
 
-### `npm start`
+🔸 FRONT
+React | Redux | Styled Components | Typescript | Jest | MSW | Toastify | Font Awesome
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+🔸 BACK
+NodeJS | ExpressJS | MongoDB | Mongoose | JWT | Supabase | Jest | Supertest
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+🔸 TOOLS
+Trello | Postman | Figma | Git
 
-### `npm test`
+## Metrics
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🔥 Lighthouse
 
-### `npm run build`
+![FutCards Lighthouse]()
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+📈 [Back SonarCloud metrics]()
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+📈 [Front SonarCloud metrics]()
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+LINKS
 
-### `npm run eject`
+🌐✨ [Crypto Realm]()
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+🔗 [Original front repository]()
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+🔗 [Original back repository]()
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Back endpoints
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+🔹 POST ➡️ .../register
+Register a user. The payload should have a username with more than 3 characters and a password with more than 8 characters.
 
-## Learn More
+🔹 POST ➡️ .../login
+Login with an existing user to get a valid token. The payload should have an existing username and password.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+🔹 GET ➡️ .../cards
+Get all the cards in a list with the fields name, position, image, and the football stats.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+🔹 GET ➡️ .../cards/:id
+Get the details of a specifyc card.
+
+🔹 POST ➡️ .../cards/create
+Create a card. The payload should have a title, an image, a description, the number of people that will be involved in the team, the estimated value, and the ICO date in which the cryoto should be release.
+
+🔹 DEL ➡️ .../cards/:idToDelete
+Delete a card with it's ID.
+
+🔹 PUT ➡️ .../cards/update/:id
+Edit a card with it's ID.
